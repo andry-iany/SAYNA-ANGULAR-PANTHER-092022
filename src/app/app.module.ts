@@ -9,9 +9,11 @@ import { EnigmasComponent } from './pages/enigmas/enigmas.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { AsideLinksComponent } from './shared/aside-links/aside-links.component';
+import { EShopComponent } from './pages/e-shop/e-shop.component';
+import { AccountComponent } from './pages/account/account.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, WakandaComponent, EnigmasComponent, NavbarComponent, FooterComponent, AsideLinksComponent],
+  declarations: [AppComponent, HomeComponent, WakandaComponent, EnigmasComponent, NavbarComponent, FooterComponent, AsideLinksComponent, EShopComponent, AccountComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
