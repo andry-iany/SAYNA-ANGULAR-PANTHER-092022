@@ -1,0 +1,71 @@
+@use "/src/globals/styles/partials/mixins";
+@use "/src/globals/styles/partials/variables";
+
+.nav {
+  padding: 0.75rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+  }
+  &-links {
+    display: none;
+    font-family: "BEYNO", sans-serif;
+    font-size: 1rem;
+  }
+  &-link:hover {
+    text-decoration: underline;
+  }
+  &-link-active {
+    text-decoration: underline;
+    color: variables.$violet-1;
+  }
+  &-logo img {
+    height: 1.6rem;
+  }
+
+  @include mixins.mq_sm {
+    &-wrapper {
+      padding: 2rem 0;
+    }
+    &-logo img {
+      height: 1.9rem;
+    }
+  }
+
+  @include mixins.mq_lg {
+    padding: 1rem;
+
+    &-wrapper {
+      padding: 2rem 0;
+      justify-content: space-between;
+    }
+    &-logo img {
+      height: 2rem;
+    }
+    &-links {
+      display: flex;
+      gap: 3rem;
+      font-size: 1.2rem;
+      align-items: baseline;
+    }
+  }
+
+  @include mixins.mq_xl {
+    &-logo img {
+      font-size: 2.3rem;
+    }
+    &-links {
+      font-size: 1.5rem;
+    }
+  }
+}

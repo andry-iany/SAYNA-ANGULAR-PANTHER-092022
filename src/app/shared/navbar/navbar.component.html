@@ -4,33 +4,31 @@
       <img src="/assets/images/all/footer2.png" alt="Logo" />
     </a>
     <div class="nav-links">
+      <!-- 
+        we need to let the components at paths "/", "/wakanda" and "enigmas"
+        to reload in order to load JQuery, otherwise the animations won't work 
+      -->
       <a
-        [ngClass]="{
-          'nav-link': true,
-          'nav-link-active': currentLegacyActive === ''
-        }"
+        class="nav-link"
         href="/"
+        routerLinkActive="nav-link-active"
+        [routerLinkActiveOptions]="{ exact: true }"
       >
-        Accueil
+        <!-- 
+          the nested routerLink is used only to be able to style the active route
+         -->
+        <span [routerLink]="['/']"> Accueil </span>
       </a>
-      <a
-        [ngClass]="{
-          'nav-link': true,
-          'nav-link-active': currentLegacyActive === 'wakanda'
-        }"
-        href="/wakanda"
-      >
-        Wakanda
+      <a class="nav-link" href="/wakanda" routerLinkActive="nav-link-active">
+        <span [routerLink]="['/wakanda']"> Wakanda </span>
       </a>
-      <a
-        [ngClass]="{
-          'nav-link': true,
-          'nav-link-active': currentLegacyActive === 'enigmas'
-        }"
-        href="/enigmas"
-      >
-        Enigme
+      <a class="nav-link" href="/enigmas" routerLinkActive="nav-link-active">
+        <span [routerLink]="['/enigmas']"> Enigme </span>
       </a>
+
+      <!-- 
+        these paths contain the brand new components hence do not need to be reloaded 
+      -->
       <a
         class="nav-link"
         [routerLink]="['/e-shop']"
