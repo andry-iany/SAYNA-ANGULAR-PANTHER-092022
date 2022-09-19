@@ -1,0 +1,37 @@
+// this file contains reusable codes for our style
+
+@use "variables";
+
+// media queries
+@mixin mq_sm {
+  @media screen and (min-width: variables.$sm) {
+    @content;
+  }
+}
+@mixin mq_md {
+  @media screen and (min-width: variables.$md) {
+    @content;
+  }
+}
+@mixin mq_lg {
+  @media screen and (min-width: variables.$lg) {
+    @content;
+  }
+}
+@mixin mq_xl {
+  @media screen and (min-width: variables.$xl) {
+    @content;
+  }
+}
+
+// styles
+@mixin flex($direction: row, $justify-content: center, $align-items: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin flex_center($direction: row) {
+  @include flex($direction, center, center);
+}

@@ -43,8 +43,13 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
-            "scripts": []
+            "styles": ["src/globals/styles/styles.scss"],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/globals/scripts/app.js",
+              "src/globals/scripts/enigmas.js",
+              "src/globals/scripts/home.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -106,8 +111,13 @@
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.scss"],
-            "scripts": []
+            "styles": ["src/globals/styles/styles.scss"],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "src/globals/scripts/app.js",
+              "src/globals/scripts/enigmas.js",
+              "src/globals/scripts/home.js"
+            ]
           }
         }
       }

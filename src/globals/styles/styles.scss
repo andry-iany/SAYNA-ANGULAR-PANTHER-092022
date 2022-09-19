@@ -1,0 +1,838 @@
+@use "partials/mixins";
+@use "partials/variables";
+@use "partials/reboot";
+
+input,
+textarea {
+  background: transparent;
+  border-radius: 1.3rem;
+  padding: 0.5rem 1.4rem;
+}
+
+.btn {
+  border-radius: 1.3rem;
+  padding: 0.5rem 1.4rem;
+  color: variables.$blue-3;
+  background-color: variables.$pink-1;
+  display: block;
+  margin: 0 auto;
+  max-width: max-content;
+  text-transform: uppercase;
+  &:hover {
+    box-shadow: 0 0 0.75rem 0 variables.$pink-1;
+  }
+}
+
+.with-fade-in {
+  opacity: 0;
+}
+
+.nav {
+  padding: 0.75rem;
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+  }
+  &-links {
+    display: none;
+    font-family: "BEYNO", sans-serif;
+  }
+  &-link:hover {
+    text-decoration: underline;
+  }
+  &-link-active {
+    text-decoration: underline;
+    color: variables.$violet-1;
+  }
+  &-logo img {
+    height: 1.6rem;
+  }
+
+  @include mixins.mq_sm {
+    &-wrapper {
+      padding: 2rem 0;
+    }
+    &-logo img {
+      height: 1.9rem;
+    }
+  }
+
+  @include mixins.mq_md {
+    padding: 1rem;
+
+    &-wrapper {
+      padding: 2rem 0;
+      justify-content: space-between;
+    }
+    &-links {
+      display: flex;
+      gap: 3rem;
+      font-size: 1.2rem;
+    }
+  }
+
+  @include mixins.mq_lg {
+    &-logo img {
+      height: 2rem;
+    }
+    &-links {
+      font-size: 1.7rem;
+    }
+  }
+
+  @include mixins.mq_xl {
+    &-logo img {
+      font-size: 2.3rem;
+    }
+    &-links {
+      font-size: 2rem;
+    }
+  }
+}
+
+.logo:hover {
+  filter: brightness(0) saturate(100%) invert(71%) sepia(5%) saturate(1693%)
+    hue-rotate(219deg) brightness(83%) contrast(92%);
+}
+
+.link-more {
+  text-decoration: underline;
+
+  &::after {
+    content: " >";
+  }
+}
+
+// define base style that's shared across different section pages
+.banner {
+  display: grid;
+  align-items: center;
+  text-align: center;
+  padding-bottom: 3rem;
+
+  &-wrapper-text {
+    width: 80%;
+    margin: 0 auto;
+    padding: 4rem 0 8rem 0;
+  }
+  &-title {
+    font-size: 2rem;
+    color: variables.$violet-1;
+    margin-bottom: 0.7rem;
+  }
+  &-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: variables.$violet-1;
+  }
+  &-description {
+    margin-bottom: 0.8rem;
+  }
+  &-wrapper-image {
+    display: none;
+  }
+  &-image {
+    width: 100%;
+  }
+
+  @include mixins.mq_md {
+    text-align: start;
+
+    &-wrapper-text {
+      padding: 2.2rem 0 3rem 0;
+    }
+    &-title {
+      font-size: 2.5rem;
+      margin-bottom: 0.9rem;
+    }
+    &-subtitle {
+      margin-bottom: 1.3rem;
+      font-size: 1.5rem;
+    }
+    &-wrapper-image {
+      display: block;
+    }
+    &-wrapper-text {
+      margin: 0 0 0 auto;
+    }
+  }
+  @include mixins.mq_lg {
+    &-wrapper-text {
+      padding: 2.5rem 0 2.8rem 0;
+    }
+    &-title {
+      font-size: 3.2rem;
+      margin-bottom: 0.8rem;
+    }
+    &-subtitle {
+      margin-bottom: 1.5rem;
+    }
+  }
+  @include mixins.mq_xl {
+    &-wrapper-text {
+      padding: 3rem 0 3.4rem 0;
+    }
+    &-title {
+      font-size: 3.8rem;
+      margin-bottom: 1rem;
+    }
+    &-subtitle {
+      margin-bottom: 1.8rem;
+    }
+    &-description {
+      width: 90%;
+    }
+  }
+}
+
+.section-title {
+  font-family: "BEYNO", sans-serif;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: variables.$violet-1;
+}
+
+.section-actor {
+  padding: 4rem 0;
+  overflow: hidden;
+
+  .all-actors {
+    width: 90%;
+    position: relative;
+    margin: 0 0 10rem auto;
+
+    @include mixins.mq_lg {
+      width: 95%;
+    }
+
+    &-content {
+      display: flex;
+      flex: 0 0 auto;
+
+      padding-left: 4rem;
+      background: variables.$blue-3;
+    }
+  }
+
+  &-btn-next {
+    @include mixins.flex_center;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 2rem;
+    transform: translateY(-50%);
+    width: 2.5rem;
+    height: 2.5rem;
+    background: variables.$blue-2;
+    border-radius: 50%;
+    z-index: 2;
+  }
+
+  &-wrapper {
+    display: flex;
+    position: relative;
+    height: 380px;
+  }
+
+  &-wrapper.highlight img {
+    transform: scale(1.15);
+    transform-origin: right;
+    transition: transform ease 0.5s;
+  }
+
+  &-image {
+    min-width: 250px;
+    max-width: 250px;
+  }
+
+  &-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  &-text {
+    padding: 3rem 2rem;
+    min-width: 350px;
+  }
+}
+
+.section-quote {
+  font-size: 0.875rem;
+}
+
+.section-video {
+  margin-bottom: 2rem;
+
+  iframe {
+    width: 100%;
+  }
+}
+
+.section-hero {
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+
+  &-text {
+    padding: 3rem 8% 0 5%;
+    text-align: justify;
+    width: 100%;
+  }
+
+  &-text p {
+    margin-bottom: 1.2rem;
+    text-align: justify;
+  }
+
+  &-bio-wrapper {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  &-bio {
+    padding: 0 2rem 6rem 2rem;
+    margin: 8rem 0 5rem 0;
+    border-radius: 0.875rem;
+    background: variables.$white;
+    color: variables.$blue-3;
+    position: relative;
+    right: 20%;
+  }
+
+  &-bio + img {
+    margin-bottom: 3rem;
+    position: relative;
+    right: 50%;
+    bottom: 20%;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  &-bio-image {
+    margin: 0 auto 1rem 0;
+    img {
+      margin-top: -60%;
+    }
+  }
+  &-bio-name {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  .status-group {
+    display: flex;
+    gap: 0.5rem 0.25rem;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+
+    &-item {
+      color: variables.$white;
+      background-color: variables.$blue-1;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.8rem;
+      border-radius: 5px;
+    }
+  }
+
+  @include mixins.mq_md {
+    &-bio {
+      margin: 12rem 0 5rem 0;
+    }
+  }
+
+  @include mixins.mq_md {
+    // we need to make sure that this comes back as row from this breakpoint from all the pages
+    flex-direction: row !important;
+
+    &-bio {
+      margin: 10rem 0 5rem 0;
+    }
+    &-text {
+      width: 60%;
+    }
+    &-bio-wrapper {
+      width: 40%;
+    }
+  }
+
+  @include mixins.mq_lg {
+    &-text {
+      width: 66%;
+    }
+    &-bio-wrapper {
+      width: 33%;
+    }
+  }
+}
+
+.section-form {
+  background: url("/assets/images/home/Pantherhome7.png") bottom/cover no-repeat;
+  padding: 6rem 3rem 4rem 3rem;
+  margin-bottom: 3rem;
+
+  &-heading {
+    text-align: center;
+    margin-bottom: 1.6rem;
+  }
+
+  form {
+    color: variables.$blue-3;
+    margin: 0 auto;
+    padding: 3rem 14%;
+    max-width: 720px;
+    border-radius: 3.5rem;
+    background: variables.$grad-white;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  input,
+  textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 1.2rem;
+    border: 1px solid variables.$blue-3;
+  }
+
+  @include mixins.mq_sm {
+    margin-bottom: 5rem;
+
+    form {
+      border-radius: 5rem;
+    }
+  }
+  @include mixins.mq_md {
+    margin-bottom: 8rem;
+
+    form {
+      border-radius: 10rem;
+    }
+  }
+}
+
+.footer {
+  padding: 8rem 2rem 5rem 2rem;
+  text-align: center;
+  background: url(/assets/images/all/back_footer.png) center/cover no-repeat;
+
+  &-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  &-image {
+    padding: 0 5%;
+    position: relative;
+    margin-bottom: 4rem;
+  }
+
+  &-image :not(img.footer-image-logo) {
+    max-width: 300px;
+  }
+
+  &-image-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem 1rem;
+    margin-bottom: 6rem;
+  }
+
+  &-links-title {
+    font-size: 1.375rem;
+    letter-spacing: 0.28rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  &-links-navigation a {
+    margin-bottom: 0.5rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &-links-socials {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &-copyright > :not(:first-child)::before {
+    content: "";
+    width: 0.4rem;
+    height: 0.4rem;
+    display: inline-block;
+    background: variables.$white;
+    border-radius: 50%;
+    margin: 0 0.3rem 0.1rem 0.3rem;
+  }
+
+  &-image:hover,
+  &-links-socials > *:hover {
+    transform: scale(1.1);
+  }
+
+  @include mixins.mq_sm {
+    text-align: left;
+    &-links {
+      justify-content: space-between;
+    }
+  }
+}
+
+.aside {
+  position: fixed;
+  top: 0;
+  left: 0.5rem;
+  height: 50vh;
+  display: flex;
+
+  &-line {
+    height: 0%;
+    border-right: 3px solid variables.$violet-1;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &-socials {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 0 0 0.2rem;
+    margin-right: -0.5rem;
+  }
+
+  &-socials a:hover {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(89%) saturate(0%)
+      hue-rotate(235deg) brightness(104%) contrast(101%);
+  }
+
+  @include mixins.mq_sm {
+    left: 1rem;
+  }
+
+  @include mixins.mq_md {
+    left: 1.5rem;
+  }
+}
+
+.section-enigmas {
+  width: 80%;
+  margin: 0 auto;
+  padding: 6rem 0 8rem 0;
+  text-align: center;
+
+  &-question-number {
+    color: variables.$violet-1;
+    text-decoration: underline;
+  }
+
+  &-solution-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20%;
+  }
+
+  &-transcript-item {
+    font-family: "WakandaForever", sans-serif;
+  }
+
+  .enigmas-hint {
+    margin: 3rem 0;
+    text-align: center;
+    height: max-content;
+    padding: 1rem;
+  }
+
+  form {
+    width: 80%;
+    margin: 0 auto;
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      margin-bottom: 4rem;
+      border: 1px solid variables.$white;
+    }
+  }
+
+  @include mixins.mq_md {
+    text-align: left;
+
+    &-solution-wrapper {
+      flex-direction: row;
+    }
+
+    form {
+      width: 40%;
+      margin: 0;
+    }
+  }
+}
+
+// Override the base style to fit in the specific page
+#home {
+  .banner {
+    background: url("/assets/images/home/Pantherhome1..png");
+    background-position: center top;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+
+    &-title {
+      font-family: "Panthera", sans-serif;
+    }
+    &-subtitle {
+      font-family: "BEYNO", sans-serif;
+    }
+    &-wrapper-text {
+      width: 80%;
+    }
+
+    @include mixins.mq_md {
+      grid-template-columns: 45% 55%;
+      background-size: auto 100%;
+      background-position: right;
+    }
+  }
+  .section-hero {
+    flex-direction: column-reverse;
+  }
+}
+#wakanda {
+  .banner {
+    background: url(/assets/images/wakanda/Pantherwakanda1.png) center / cover
+      no-repeat;
+
+    &-title {
+      font-family: "BEYNO", sans-serif;
+    }
+    &-subtitle {
+      font-family: "WakandaForever", sans-serif;
+      letter-spacing: 0.5rem;
+    }
+    &-wrapper-text {
+      width: 87%;
+      padding: 8rem 0 9rem 0;
+    }
+
+    @include mixins.mq_md {
+      grid-template-columns: 50% 50%;
+    }
+  }
+
+  .section-hero {
+    position: relative;
+    flex-direction: column;
+
+    // we want to decrease the opacity of the background image so we use ::after for that end
+    // that said, we also want to keep all of the children of this element to be clickable
+    // so we elevate them
+    > * {
+      position: relative;
+      z-index: 1;
+    }
+    &::after {
+      content: "";
+      background: url("/assets/images/wakanda/Pantherwakanda2.png");
+      background-size: 100% auto;
+      background-position: top;
+      background-repeat: no-repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.15;
+      z-index: 0;
+    }
+  }
+}
+#enigmas {
+  .banner {
+    background: url("/assets/images/enigmas/Pantherenigme1.png");
+    background-position: center top;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+
+    > div {
+      position: relative;
+      grid-column-start: 2;
+
+      &::after {
+        content: "";
+        background: url(/assets/images/enigmas/Pantherenigme3.png);
+        background-size: 100%;
+        height: 5px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 13%;
+      }
+    }
+
+    &-title {
+      font-family: "BEYNO", sans-serif;
+    }
+
+    &-wrapper-text {
+      padding: 4rem 0 8rem 0;
+    }
+
+    &-wrapper-image img {
+      width: 100%;
+    }
+
+    &-description {
+      margin: 0 0 0 auto;
+    }
+
+    @include mixins.mq_md {
+      grid-template-columns: 50% 50%;
+      background-position: left;
+      background-size: auto 100%;
+
+      &-title {
+        margin-bottom: 8rem;
+      }
+
+      &-wrapper-text {
+        margin: 0 auto 0 0;
+        padding: 8rem 0;
+      }
+    }
+  }
+
+  .banner .enigma-rounded {
+    &::after {
+      content: "";
+      display: block;
+      background: url("../../assets/images/all/logo_souris_BP1_blanc.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 3rem;
+      height: 4rem;
+      position: absolute;
+      top: calc(100% + 0.5rem);
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+
+  .enigma-rounded {
+    position: relative;
+    text-align: justify;
+
+    @include mixins.mq_md {
+      // we want the rounded circles to be hidden in mobile devices
+      &::before {
+        content: "";
+        display: block;
+        background: url(/assets/images/enigmas/Pantherenigme2.png);
+        background-size: 100% 100%;
+        position: absolute;
+        top: -100%;
+        left: -25%;
+        width: 150%;
+        height: 300%;
+      }
+
+      &-rotated::before {
+        transform: rotateY(180deg);
+      }
+    }
+  }
+}
+
+.popup {
+  position: fixed;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 380px;
+
+  &::before {
+    content: "";
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    z-index: -1;
+    width: 150%;
+    height: 150%;
+    filter: blur(8px);
+    background: linear-gradient(#3d2da6, #021740);
+    border-radius: 1rem;
+  }
+
+  &-body {
+    padding: 2rem 3rem 4.5rem 3rem;
+    background: linear-gradient(180deg, #9e91b7, #3d2da6);
+    border-radius: 1rem;
+    text-align: center;
+  }
+
+  &-body *:only-child {
+    margin: 0;
+    padding-top: 2.5rem;
+  }
+
+  h1 {
+    text-transform: uppercase;
+  }
+
+  > h1 {
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    margin-top: 2.5rem;
+  }
+}
+
+.counter-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2.5rem;
+  gap: 1rem;
+  text-align: left;
+}

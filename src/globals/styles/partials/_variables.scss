@@ -1,0 +1,43 @@
+// This file contains the variables needed across all pages, like the color hex code
+
+// fonts
+@font-face {
+  font-family: "BEYNO";
+  src: url(/assets/fonts/BEYNO.otf) format("opentype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Cantarell";
+  src: url(/assets/fonts/Cantarell-Regular.ttf) format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Panthera";
+  src: url(/assets/fonts/PantheraRegular-MVZ9J.ttf) format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "WakandaForever";
+  src: url(/assets/fonts/WakandaForever-Regular.ttf) format("truetype");
+  font-weight: 400;
+}
+
+// colors
+$blue-1: #3d2da6;
+$blue-2: #07338c;
+$blue-3: #021740;
+$pink-1: #f2cef2;
+$pink-2: #df99f2;
+$violet-1: #9e91b7;
+$white: #ffffff;
+$tr-white: #ffffff1a;
+$grad-white: linear-gradient($white, $tr-white);
+
+// breakpoints
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1110px;
+
+// width
+$min-width: 375px;
