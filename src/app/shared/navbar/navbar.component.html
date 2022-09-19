@@ -1,0 +1,36 @@
+<nav class="nav">
+  <div class="nav-wrapper">
+    <a href="#header" class="logo nav-logo">
+      <img src="/assets/images/all/footer2.png" alt="Logo" />
+    </a>
+    <div class="nav-links">
+      <a
+        [ngClass]="{
+          'nav-link': true,
+          'nav-link-active': currentLegacyActive === ''
+        }"
+        href="/"
+      >
+        Accueil
+      </a>
+      <a
+        [ngClass]="{
+          'nav-link': true,
+          'nav-link-active': currentLegacyActive === 'wakanda'
+        }"
+        href="/wakanda"
+      >
+        Wakanda
+      </a>
+      <a
+        [ngClass]="{
+          'nav-link': true,
+          'nav-link-active': currentLegacyActive === 'enigmas'
+        }"
+        href="/enigmas"
+      >
+        Enigme
+      </a>
+    </div>
+  </div>
+</nav>

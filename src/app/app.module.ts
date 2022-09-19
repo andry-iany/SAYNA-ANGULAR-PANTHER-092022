@@ -6,9 +6,10 @@ import { AppComponent } from './root/app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { WakandaComponent } from './pages/wakanda/wakanda.component';
 import { EnigmasComponent } from './pages/enigmas/enigmas.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, WakandaComponent, EnigmasComponent],
+  declarations: [AppComponent, HomeComponent, WakandaComponent, EnigmasComponent, NavbarComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
