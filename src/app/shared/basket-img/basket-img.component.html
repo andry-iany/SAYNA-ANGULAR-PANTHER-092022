@@ -1,6 +1,16 @@
-<img
-  class="basket"
-  routerLink="/e-shop/cart"
-  src="/assets/icones/icone_1.png"
-  alt="Basket"
-/>
+<div class="d-inline-block position-relative">
+  <img
+    class="basket"
+    routerLink="/e-shop/cart"
+    src="/assets/icones/icone_1.png"
+    alt="Basket"
+  />
+  <ng-container *ngIf="cartService.cartItems$ | async as cartItems">
+    <span
+      *ngIf="cartItems.length > 0"
+      class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+    >
+      {{ cartItems.length }}
+    </span>
+  </ng-container>
+</div>
