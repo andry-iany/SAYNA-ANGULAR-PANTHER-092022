@@ -8,7 +8,6 @@ import { TArticle } from '../e-shop.model';
 })
 export class ArticleComponent implements OnInit {
   @Input() article!: TArticle;
-  @Input() isSale = false;
 
   constructor() {}
 

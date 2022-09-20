@@ -1,11 +1,19 @@
-<article class="px-3 position-relative">
-  <app-article-card [article]="article"></app-article-card>
-  <button
-    [routerLink]="'/e-shop/basket'"
+<article class="px-3">
+  <div
+    class="card rounded-0 mb-4"
+    [routerLink]="'/e-shop/product/' + article.id"
     routerLinkActive="active"
-    [routerLinkActiveOptions]="{ exact: false }"
-    class="d-block w-100 p-3 text-uppercase"
   >
-    ajouter au panier
-  </button>
+    <img
+      [src]="'http://localhost:5678/' + article.src"
+      class="card-img-top"
+      [alt]="article.name"
+    />
+    <div class="card-body p-4 text-center">
+      <h6 class="card-title text-uppercase text-secondary">
+        {{ article.name }}
+      </h6>
+      <p class="card-text h3">{{ article.price }}€</p>
+    </div>
+  </div>
 </article>
