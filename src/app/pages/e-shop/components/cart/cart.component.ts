@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BasketItem } from '../../e-shop.model';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -7,44 +7,6 @@ import { BasketItem } from '../../e-shop.model';
   styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
-  basketItems: BasketItem[] = [
-    {
-      article: {
-        id: 1,
-        price: 49.0,
-        src: '../../../assets/illustrations/game/Batgame_14.png',
-        title: 'Figurine du Joker',
-      },
-      articleCount: 1,
-    },
-    {
-      article: {
-        id: 2,
-        price: 49.0,
-        src: '../../../assets/illustrations/game/Batgame_14.png',
-        title: 'Figurine du Joker',
-      },
-      articleCount: 1,
-    },
-  ];
-
-  onItemCountChange(id: BasketItem['article']['id'], newCount: number) {
-    this.basketItems = this.basketItems.map((item) => {
-      return String(id) === String(item.article.id)
-        ? { ...item, articleCount: newCount }
-        : item;
-    });
-  }
-
-  onItemDelete(id: BasketItem['article']['id']) {
-    this.basketItems = this.basketItems.filter(
-      (item) => String(id) !== String(item.article.id)
-    );
-  }
-
+  constructor(public cartService: CartService) {}
   ngOnInit(): void {}
-
-  get subTotal() {
-    return this.basketItems.reduce((acc, item) => acc + item.article.price, 0);
-  }
 }

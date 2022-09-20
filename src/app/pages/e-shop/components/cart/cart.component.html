@@ -14,18 +14,21 @@
 
   <h3 class="cart-title mb-5">Récapitulatif du panier</h3>
 
-  <section class="d-flex flex-column gap-4">
+  <section
+    class="d-flex flex-column gap-4"
+    *ngIf="cartService.cartItems$ | async as cartItems"
+  >
     <app-cart-item
-      *ngFor="let item of basketItems"
+      *ngFor="let item of cartItems"
       [item]="item"
-      (onCountChange)="onItemCountChange(item.article.id, $event)"
-      (onItemDelete)="onItemDelete(item.article.id)"
+      (onCountChange)="cartService.onItemCountChange(item.article.id, $event)"
+      (onItemDelete)="cartService.onItemDelete(item.article.id)"
     ></app-cart-item>
   </section>
 
   <p class="text-end py-4 px-3">
     <span class="fw-light text-uppercase me-4">Sous total</span>
-    <span class="h4"> {{ subTotal }}€ </span>
+    <span class="h4"> {{ cartService.getSubtotal() | async }}€ </span>
   </p>
 
   <div class="d-flex justify-content-center gap-5 pt-4">
