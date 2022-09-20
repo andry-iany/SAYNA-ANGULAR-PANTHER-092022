@@ -1,0 +1,31 @@
+@use "/src/globals/styles/partials/mixins";
+.recommendations::-webkit-scrollbar {
+  height: 4px;
+}
+.recommendations::-webkit-scrollbar-track {
+  background-color: rgba(0, 0, 0, 0.411);
+  border-radius: 5px;
+}
+.recommendations::-webkit-scrollbar-thumb {
+  background-color: #51416e;
+  border-radius: 5px;
+}
+
+.article-wrapper {
+  min-width: 100%;
+  max-width: 100%;
+
+  @include mixins.mq_sm {
+    min-width: 50%;
+    max-width: 50%;
+  }
+  @include mixins.mq_md {
+    min-width: calc(33% - 0.5rem);
+    max-width: calc(33% - 0.5rem);
+  }
+  @include mixins.mq_lg {
+    min-width: 200px;
+    width: 100%;
+    max-width: 300px;
+  }
+}

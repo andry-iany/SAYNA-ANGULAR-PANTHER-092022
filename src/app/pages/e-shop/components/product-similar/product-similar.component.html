@@ -2,10 +2,9 @@
 
 <div
   *ngIf="recommendations$ | async as recommendations"
-  class="d-flex w-100 gap-3 justify-content-between"
+  class="recommendations d-flex w-100 gap-3 overflow-auto"
 >
-  <app-article
-    *ngFor="let article of recommendations"
-    [article]="article"
-  ></app-article>
+  <div class="article-wrapper" *ngFor="let article of recommendations">
+    <app-article [article]="article"></app-article>
+  </div>
 </div>
