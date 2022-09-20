@@ -37,23 +37,7 @@ export class FilterComponent implements OnInit {
           count: 123,
         },
         {
-          description: 'Comics',
-          count: 123,
-        },
-        {
-          description: 'Multimedia',
-          count: 123,
-        },
-        {
           description: 'Equipement',
-          count: 123,
-        },
-        {
-          description: 'Bijoux',
-          count: 123,
-        },
-        {
-          description: 'Vehicule',
           count: 123,
         },
       ],
@@ -62,15 +46,11 @@ export class FilterComponent implements OnInit {
       title: 'Couleur',
       options: [
         {
-          description: 'Bestsellers',
+          description: 'Noir',
           count: 123,
         },
         {
-          description: 'Goodies',
-          count: 123,
-        },
-        {
-          description: 'Vêtements',
+          description: 'Blanc',
           count: 123,
         },
       ],
@@ -79,46 +59,12 @@ export class FilterComponent implements OnInit {
       title: 'Univers',
       options: [
         {
-          description: 'Bestsellers',
-          count: 123,
-        },
-        {
-          description: 'Goodies',
-          count: 123,
-        },
-        {
-          description: 'Vêtements',
-          count: 123,
-        },
-        {
-          description: 'Affiches/posters',
-          count: 123,
-        },
-        {
-          description: 'Comics',
-          count: 123,
-        },
-        {
-          description: 'Multimedia',
-          count: 123,
-        },
-        {
-          description: 'Equipement',
-          count: 123,
-        },
-        {
-          description: 'Bijoux',
-          count: 123,
-        },
-        {
-          description: 'Vehicule',
+          description: 'Black panthers',
           count: 123,
         },
       ],
     },
   ];
-
-  constructor() {}
 
   ngOnInit(): void {}
 }
