@@ -1,0 +1,14 @@
+<div class="d-flex img-wrapper">
+  <img
+    [src]="'http://localhost:5678/' + srcSet[0]"
+    alt=""
+    class="img-highlight"
+  />
+  <div class="imgs-other d-flex flex-column">
+    <img
+      *ngFor="let src of srcSet"
+      [src]="'http://localhost:5678/' + src"
+      alt=""
+    />
+  </div>
+</div>

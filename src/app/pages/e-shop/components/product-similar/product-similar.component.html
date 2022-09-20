@@ -1,0 +1,11 @@
+<h2 class="mb-5">Produits similaires</h2>
+
+<div
+  *ngIf="recommendations$ | async as recommendations"
+  class="d-flex w-100 gap-3 justify-content-between"
+>
+  <app-article
+    *ngFor="let article of recommendations"
+    [article]="article"
+  ></app-article>
+</div>

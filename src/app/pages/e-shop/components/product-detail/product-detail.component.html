@@ -1,0 +1,86 @@
+<section *ngIf="article$ | async as article" class="product-detail">
+  <div class="d-flex justify-content-between py-4">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb text-capitalize">
+        <li class="breadcrumb-item">
+          <a href="#" routerLink="/e-shop">e-shop</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">panier</li>
+      </ol>
+    </nav>
+
+    <app-basket-img></app-basket-img>
+  </div>
+
+  <div class="row border-secondary border-bottom pb-4 mb-4">
+    <div class="col-5">
+      <app-product-image
+        [srcSet]="[article.src, article.src]"
+      ></app-product-image>
+    </div>
+
+    <div class="col-7">
+      <div class="d-flex align-items-center gap-3">
+        <app-product-rating [rating]="3"></app-product-rating>
+        <small class="comment">6 commentaires</small>
+      </div>
+
+      <h1 class="text-uppercase border-secondary border-bottom pt-3 pb-5 mb-4">
+        {{ article.name }}
+      </h1>
+
+      <div class="d-flex justify-content-between mb-4">
+        <h2 class="mb-4">{{ article.price }}€</h2>
+        <div class="d-flex align-items-center gap-3">
+          <span class="text-decoration-underline">En stock</span>
+        </div>
+      </div>
+
+      <div class="d-flex gap-4 border-secondary border-bottom pt-3 pb-5 mb-4">
+        <app-button variant="red-blue" routerLink="/e-shop/basket">
+          ajouter au panier
+        </app-button>
+      </div>
+
+      <p>
+        {{ article.description }}
+      </p>
+    </div>
+  </div>
+
+  <div class="text-secondary border-secondary border-bottom pb-4 mb-4">
+    <p class="lead">Caractéristiques</p>
+    <p class="detail-content">Matériaux : {{ article.material || "" }}</p>
+    <p class="detail-content">Couleur : {{ article.color || "" }}</p>
+    <p class="detail-content">Poids : {{ article.weight || "" }}</p>
+    <p class="detail-content">Capacité : {{ article.weight || "" }}</p>
+  </div>
+
+  <div class="text-secondary border-secondary border-bottom pb-4 mb-4">
+    <p class="lead">Livraison</p>
+    <p class="detail-content">Livraison à domicile.</p>
+    <p class="detail-content">Retrait en point relais.</p>
+    <p class="detail-content">Délai de livraison 2-4 jours</p>
+  </div>
+
+  <div class="mb-5">
+    <h3>Commentaires</h3>
+
+    <div
+      *ngFor="let review of reviews"
+      class="border-secondary border-bottom pb-4 pt-4"
+    >
+      <div class="d-flex gap-3">
+        <app-product-rating [rating]="review.rating"></app-product-rating>
+        <h4 class="reviewer-name text-uppercase w-100 fw-light">
+          {{ review.reviewer }}
+        </h4>
+        <span class="text-secondary">11.10.21</span>
+      </div>
+
+      <p>{{ review.content }}</p>
+    </div>
+  </div>
+
+  <app-product-similar></app-product-similar>
+</section>
