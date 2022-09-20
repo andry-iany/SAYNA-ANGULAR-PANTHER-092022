@@ -1,0 +1,11 @@
+<article class="px-3 position-relative">
+  <app-article-card [article]="article"></app-article-card>
+  <button
+    [routerLink]="'/e-shop/basket'"
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: false }"
+    class="d-block w-100 p-3 text-uppercase"
+  >
+    ajouter au panier
+  </button>
+</article>

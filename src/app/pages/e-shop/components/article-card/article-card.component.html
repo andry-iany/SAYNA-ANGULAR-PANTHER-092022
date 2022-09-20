@@ -1,0 +1,15 @@
+<div
+  class="card rounded-0 mb-4"
+  [routerLink]="'/e-shop/product/' + article.id"
+  routerLinkActive="active"
+>
+  <img
+    [src]="'http://localhost:5678/' + article.src"
+    class="card-img-top"
+    [alt]="article.name"
+  />
+  <div class="card-body p-4 text-center">
+    <h6 class="card-title text-uppercase text-secondary">{{ article.name }}</h6>
+    <p class="card-text h3">{{ article.price }}€</p>
+  </div>
+</div>

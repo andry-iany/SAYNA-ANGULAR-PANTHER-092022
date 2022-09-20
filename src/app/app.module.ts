@@ -8,7 +8,7 @@ import { WakandaComponent } from './pages/wakanda/wakanda.component';
 import { EnigmasComponent } from './pages/enigmas/enigmas.component';
 import { AccountComponent } from './pages/account/account.component';
 import { EShopModule } from './pages/e-shop/e-shop.module';
-import { CoreModule } from './shared/core/core.module';
+import { CoreModule } from './shared/core.module';
 
 @NgModule({
   declarations: [
