@@ -3,19 +3,21 @@
     <app-basket-img></app-basket-img>
   </div>
 
-  <div class="d-flex justify-content-between mb-5">
-    <h5>Résultats: 122</h5>
-    <select class="form-select">
-      <option selected>Trier par</option>
-      <option value="1">One</option>
-      <option value="2">Two</option>
-      <option value="3">Three</option>
-    </select>
-  </div>
-
-  <div class="row article-wrapper" *ngIf="articles$ | async as articles">
-    <div *ngFor="let article of articles" class="col-4">
-      <app-article [article]="article"></app-article>
+  <ng-container *ngIf="articles$ | async as articles">
+    <div class="d-flex justify-content-between mb-5">
+      <h5>Résultats: {{ articles.length }}</h5>
+      <select class="form-select">
+        <option selected>Trier par</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
     </div>
-  </div>
+
+    <div class="row article-wrapper">
+      <div *ngFor="let article of articles" class="col-4">
+        <app-article [article]="article"></app-article>
+      </div>
+    </div>
+  </ng-container>
 </section>
