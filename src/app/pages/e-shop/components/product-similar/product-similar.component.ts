@@ -9,9 +9,7 @@ import { ProductService } from '../../services/product.service';
 })
 export class ProductSimilarComponent implements OnInit {
   constructor(private productService: ProductService) {}
-  recommendations$ = this.productService
-    .getAllArticles()
-    .pipe(map((articles) => articles.slice(0, 3)));
+  recommendations$ = this.productService.getAllArticles({ _limit: 3 });
 
   ngOnInit(): void {}
 }
