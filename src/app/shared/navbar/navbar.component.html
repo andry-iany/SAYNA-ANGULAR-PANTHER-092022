@@ -1,48 +1,77 @@
-<nav class="nav">
-  <div class="nav-wrapper">
-    <a href="#header" class="logo nav-logo">
+<nav class="nav navbar navbar-dark navbar-expand-lg">
+  <div class="container-fluid nav-wrapper px-4">
+    <a class="navbar-brand" href="#header" class="logo nav-logo">
       <img src="/assets/images/all/footer2.png" alt="Logo" />
     </a>
-    <div class="nav-links">
-      <!-- 
-        we need to let the components at paths "/", "/wakanda" and "enigmas"
-        to reload in order to load JQuery, otherwise the animations won't work 
-      -->
-      <a
-        class="nav-link"
-        href="/"
-        routerLinkActive="nav-link-active"
-        [routerLinkActiveOptions]="{ exact: true }"
-      >
-        <!-- 
-          the nested routerLink is used only to be able to style the active route
-         -->
-        <span [routerLink]="['/']"> Accueil </span>
-      </a>
-      <a class="nav-link" href="/wakanda" routerLinkActive="nav-link-active">
-        <span [routerLink]="['/wakanda']"> Wakanda </span>
-      </a>
-      <a class="nav-link" href="/enigmas" routerLinkActive="nav-link-active">
-        <span [routerLink]="['/enigmas']"> Enigme </span>
-      </a>
 
-      <!-- 
-        these paths contain the brand new components hence do not need to be reloaded 
-      -->
-      <a
-        class="nav-link"
-        [routerLink]="['/e-shop']"
-        routerLinkActive="nav-link-active"
-      >
-        E-Shop
-      </a>
-      <a
-        class="nav-link"
-        [routerLink]="['/account']"
-        routerLinkActive="nav-link-active"
-      >
-        Account
-      </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navlinks"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navlinks">
+      <ul class="navbar-nav nav-links ms-auto">
+        <!-- 
+          we need to let the components at paths "/", "/wakanda" and "enigmas"
+          to reload in order to load JQuery, otherwise the animations won't work 
+        -->
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="/"
+            routerLinkActive="nav-link-active"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <!-- the nested routerLink is used only to be able to style the active route -->
+            <span [routerLink]="['/']"> Accueil </span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="/wakanda"
+            routerLinkActive="nav-link-active"
+          >
+            <span [routerLink]="['/wakanda']"> Wakanda </span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="/enigmas"
+            routerLinkActive="nav-link-active"
+          >
+            <span [routerLink]="['/enigmas']"> Enigme </span>
+          </a>
+        </li>
+
+        <!-- these paths contain the brand new components hence do not need to be reloaded -->
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/e-shop']"
+            routerLinkActive="nav-link-active"
+          >
+            E-Shop
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [routerLink]="['/account']"
+            routerLinkActive="nav-link-active"
+          >
+            Account
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </nav>
