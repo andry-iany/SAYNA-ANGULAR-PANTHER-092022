@@ -1,11 +1,10 @@
 <section class="px-3">
-  <div class="text-end px-4 mb-4">
-    <app-basket-img></app-basket-img>
-  </div>
-
   <ng-container *ngIf="articles$ | async as articles">
-    <div class="d-flex justify-content-between mb-5">
-      <h5>Résultats: {{ articles.length }}</h5>
+    <div class="d-flex justify-content-between align-items-center mb-5">
+      <h3 class="m-0">
+        <span class="result-title">Résultats: </span>
+        {{ articles.length }}
+      </h3>
       <select class="form-select">
         <option selected>Trier par</option>
         <option value="1">One</option>
