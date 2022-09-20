@@ -30,7 +30,7 @@ const basketItems: BasketItem[] = [
 export class CartService {
   readonly cartItems$ = new BehaviorSubject<BasketItem[]>(basketItems);
 
-  onItemCountChange(id: BasketItem['article']['id'], newCount: number) {
+  updateItemCount(id: BasketItem['article']['id'], newCount: number) {
     const changeItemCount = (items: BasketItem[]) => {
       return items.map((item) => {
         return String(id) === String(item.article.id)
@@ -42,7 +42,7 @@ export class CartService {
     this._publishChange(changeItemCount);
   }
 
-  onItemDelete(id: BasketItem['article']['id']) {
+  deleteItem(id: BasketItem['article']['id']) {
     const deleteItem = (items: BasketItem[]) => {
       return items.filter((item) => String(id) !== String(item.article.id));
     };

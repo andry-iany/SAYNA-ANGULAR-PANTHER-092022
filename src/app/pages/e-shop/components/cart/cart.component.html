@@ -21,8 +21,8 @@
     <app-cart-item
       *ngFor="let item of cartItems"
       [item]="item"
-      (onCountChange)="cartService.onItemCountChange(item.article.id, $event)"
-      (onItemDelete)="cartService.onItemDelete(item.article.id)"
+      (onCountChange)="cartService.updateItemCount(item.article.id, $event)"
+      (onItemDelete)="cartService.deleteItem(item.article.id)"
     ></app-cart-item>
   </section>
 
