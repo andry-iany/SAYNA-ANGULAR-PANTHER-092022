@@ -1,0 +1,11 @@
+.add-to-cart {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px solid #fff;
+  text-transform: uppercase;
+  color: #fff;
+  transition: background-color ease 0.3s;
+}
+.add-to-cart:hover {
+  background-color: #160634;
+}
