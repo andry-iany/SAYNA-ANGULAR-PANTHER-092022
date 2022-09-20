@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TArticle } from '../../e-shop.model';
+import { CartService } from '../../services/cart.service';
 import { ProductService } from '../../services/product.service';
 
 @Component({
@@ -26,8 +28,9 @@ export class ProductDetailComponent implements OnInit {
   article$!: ReturnType<typeof this.productService.getArticleById>;
 
   constructor(
+    private route: ActivatedRoute,
     private productService: ProductService,
-    private route: ActivatedRoute
+    private cartService: CartService
   ) {}
 
   ngOnInit(): void {
@@ -35,6 +38,15 @@ export class ProductDetailComponent implements OnInit {
       this.article$ = this.productService.getArticleById(
         params.get('productId') || ''
       );
+    });
+  }
+
+  onAddToCart(article: TArticle) {
+    this.cartService.addItem({
+      id: article.id,
+      price: article.price,
+      src: article.src,
+      title: article.name,
     });
   }
 }

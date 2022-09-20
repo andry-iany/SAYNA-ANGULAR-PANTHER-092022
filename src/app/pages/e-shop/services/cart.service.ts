@@ -3,32 +3,11 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, map } from 'rxjs';
 import { BasketItem } from '../e-shop.model';
 
-const basketItems: BasketItem[] = [
-  {
-    article: {
-      id: 1,
-      price: 49.0,
-      src: '../../../assets/illustrations/game/Batgame_14.png',
-      title: 'Figurine du Joker',
-    },
-    articleCount: 1,
-  },
-  {
-    article: {
-      id: 2,
-      price: 49.0,
-      src: '../../../assets/illustrations/game/Batgame_14.png',
-      title: 'Figurine du Joker',
-    },
-    articleCount: 1,
-  },
-];
-
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  readonly cartItems$ = new BehaviorSubject<BasketItem[]>(basketItems);
+  readonly cartItems$ = new BehaviorSubject<BasketItem[]>([]);
 
   updateItemCount(id: BasketItem['article']['id'], newCount: number) {
     const changeItemCount = (items: BasketItem[]) => {
@@ -48,6 +27,23 @@ export class CartService {
     };
 
     this._publishChange(deleteItem);
+  }
+
+  addItem(article: BasketItem['article']) {
+    const addItem = (items: BasketItem[]) => {
+      const newItem = { article, articleCount: 1 };
+      const newItems = items.slice(); // we create a copy of the array to preserve immutability
+
+      const isItemExisting = !!newItems.find((item) => {
+        return String(newItem.article.id) === String(item.article.id);
+      });
+
+      if (!isItemExisting) newItems.push(newItem);
+
+      return newItems;
+    };
+
+    this._publishChange(addItem);
   }
 
   getSubtotal() {
