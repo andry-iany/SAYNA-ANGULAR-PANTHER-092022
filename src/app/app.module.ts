@@ -6,11 +6,9 @@ import { AppComponent } from './root/app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { WakandaComponent } from './pages/wakanda/wakanda.component';
 import { EnigmasComponent } from './pages/enigmas/enigmas.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
-import { FooterComponent } from './shared/footer/footer.component';
-import { AsideLinksComponent } from './shared/aside-links/aside-links.component';
 import { AccountComponent } from './pages/account/account.component';
 import { EShopModule } from './pages/e-shop/e-shop.module';
+import { CoreModule } from './shared/core/core.module';
 
 @NgModule({
   declarations: [
@@ -18,12 +16,9 @@ import { EShopModule } from './pages/e-shop/e-shop.module';
     HomeComponent,
     WakandaComponent,
     EnigmasComponent,
-    NavbarComponent,
-    FooterComponent,
-    AsideLinksComponent,
     AccountComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, EShopModule],
+  imports: [BrowserModule, AppRoutingModule, EShopModule, CoreModule],
   providers: [],
   bootstrap: [AppComponent],
 })
