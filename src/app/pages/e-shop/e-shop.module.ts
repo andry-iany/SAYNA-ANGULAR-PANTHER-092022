@@ -13,6 +13,8 @@ import { ProductDetailComponent } from './components/product-detail/product-deta
 import { ProductRatingComponent } from './components/product-rating/product-rating.component';
 import { ProductImageComponent } from './components/product-image/product-image.component';
 import { ProductSimilarComponent } from './components/product-similar/product-similar.component';
+import { CartComponent } from './components/cart/cart.component';
+import { CartItemComponent } from './components/cart-item/cart-item.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { ProductSimilarComponent } from './components/product-similar/product-si
     ProductRatingComponent,
     ProductImageComponent,
     ProductSimilarComponent,
+    CartComponent,
+    CartItemComponent,
   ],
   imports: [CommonModule, EShopRoutingModule, CoreModule, HttpClientModule],
   exports: [EShopComponent],

@@ -1,0 +1,37 @@
+<section class="basket-page">
+  <div class="d-flex justify-content-between py-4">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb text-capitalize">
+        <li class="breadcrumb-item">
+          <a href="#" routerLink="/e-shop">e-shop</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">panier</li>
+      </ol>
+    </nav>
+
+    <app-basket-img></app-basket-img>
+  </div>
+
+  <h3 class="cart-title mb-5">Récapitulatif du panier</h3>
+
+  <section class="d-flex flex-column gap-4">
+    <app-cart-item
+      *ngFor="let item of basketItems"
+      [item]="item"
+      (onCountChange)="onItemCountChange(item.article.id, $event)"
+      (onItemDelete)="onItemDelete(item.article.id)"
+    ></app-cart-item>
+  </section>
+
+  <p class="text-end py-4 px-3">
+    <span class="fw-light text-uppercase me-4">Sous total</span>
+    <span class="h4"> {{ subTotal }}€ </span>
+  </p>
+
+  <div class="d-flex justify-content-center gap-5 pt-4">
+    <button class="btn-continue" routerLink="/e-shop">
+      CONTINUER MES ACHATS
+    </button>
+    <button class="btn-continue">PASSER LA COMMANDE</button>
+  </div>
+</section>
