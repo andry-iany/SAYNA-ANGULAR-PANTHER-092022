@@ -8,6 +8,7 @@ import { FilterComponent } from './components/filter/filter.component';
 import { ResultsComponent } from './components/results/results.component';
 import { CoreModule } from 'src/app/shared/core.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AllProductsComponent } from './components/all-products/all-products.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
     ArticleComponent,
     FilterComponent,
     ResultsComponent,
+    AllProductsComponent,
   ],
   imports: [CommonModule, EShopRoutingModule, CoreModule, HttpClientModule],
   exports: [EShopComponent],
