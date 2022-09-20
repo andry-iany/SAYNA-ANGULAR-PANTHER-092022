@@ -14,27 +14,37 @@
 
   <h3 class="cart-title mb-5">Récapitulatif du panier</h3>
 
-  <section
-    class="d-flex flex-column gap-4"
-    *ngIf="cartService.cartItems$ | async as cartItems"
-  >
-    <app-cart-item
-      *ngFor="let item of cartItems"
-      [item]="item"
-      (onCountChange)="cartService.updateItemCount(item.article.id, $event)"
-      (onItemDelete)="cartService.deleteItem(item.article.id)"
-    ></app-cart-item>
-  </section>
+  <ng-container *ngIf="cartService.cartItems$ | async as cartItems">
+    <ng-container *ngIf="cartItems.length > 0; else noItems">
+      <section class="d-flex flex-column gap-4">
+        <app-cart-item
+          *ngFor="let item of cartItems"
+          [item]="item"
+          (onCountChange)="cartService.updateItemCount(item.article.id, $event)"
+          (onItemDelete)="cartService.deleteItem(item.article.id)"
+        ></app-cart-item>
+      </section>
 
-  <p class="text-end py-4 px-3">
-    <span class="fw-light text-uppercase me-4">Sous total</span>
-    <span class="h4"> {{ cartService.getSubtotal() | async }}€ </span>
-  </p>
+      <p class="text-end py-4 px-3">
+        <span class="fw-light text-uppercase me-4">Sous total</span>
+        <span class="h4"> {{ cartService.getSubtotal() | async }}€ </span>
+      </p>
+    </ng-container>
 
-  <div class="d-flex justify-content-center gap-5 pt-4">
-    <button class="btn-continue" routerLink="/e-shop">
-      CONTINUER MES ACHATS
-    </button>
-    <button class="btn-continue">PASSER LA COMMANDE</button>
-  </div>
+    <ng-template #noItems>
+      <p class="text-no-items text-center mb-5">
+        Votre panier est vide. <br />
+        Ajouter des articles pour les voirs ici.
+      </p>
+    </ng-template>
+
+    <div class="d-flex justify-content-center gap-5 pt-4">
+      <button class="btn-continue" routerLink="/e-shop">
+        CONTINUER MES ACHATS
+      </button>
+      <button class="btn-continue" [disabled]="cartItems.length === 0">
+        PASSER LA COMMANDE
+      </button>
+    </div>
+  </ng-container>
 </section>
