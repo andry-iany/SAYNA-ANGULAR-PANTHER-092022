@@ -12,21 +12,22 @@ export class CartService {
   updateItemCount(id: BasketItem['article']['id'], newCount: number) {
     const changeItemCount = (items: BasketItem[]) => {
       return items.map((item) => {
-        return String(id) === String(item.article.id)
+        return id === item.article.id
           ? { ...item, articleCount: newCount }
           : item;
       });
     };
 
-    this._publishChange(changeItemCount);
+    return this._publishChange(changeItemCount);
   }
 
   deleteItem(id: BasketItem['article']['id']) {
     const deleteItem = (items: BasketItem[]) => {
-      return items.filter((item) => String(id) !== String(item.article.id));
+      const newItems = items.filter((item) => id !== item.article.id);
+      return newItems.length === items.length ? null : newItems;
     };
 
-    this._publishChange(deleteItem);
+    return this._publishChange(deleteItem);
   }
 
   addItem(article: BasketItem['article']) {
@@ -38,12 +39,13 @@ export class CartService {
         return String(newItem.article.id) === String(item.article.id);
       });
 
-      if (!isItemExisting) newItems.push(newItem);
+      if (isItemExisting) return null;
 
+      newItems.push(newItem);
       return newItems;
     };
 
-    this._publishChange(addItem);
+    return this._publishChange(addItem);
   }
 
   getSubtotal() {
@@ -56,8 +58,16 @@ export class CartService {
     );
   }
 
-  private _publishChange(fn: (items: BasketItem[]) => BasketItem[]) {
+  // this function returns true if the operation is successful, false otherwise
+  private _publishChange(fn: (items: BasketItem[]) => BasketItem[] | null) {
+    // the callback function needs to return null to indicate error
     const newItems = fn(this.cartItems$.value);
-    this.cartItems$.next(newItems);
+
+    if (newItems === null) {
+      return false;
+    } else {
+      this.cartItems$.next(newItems);
+      return true;
+    }
   }
 }

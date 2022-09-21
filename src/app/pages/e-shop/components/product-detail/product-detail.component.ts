@@ -42,11 +42,16 @@ export class ProductDetailComponent implements OnInit {
   }
 
   onAddToCart(article: TArticle) {
-    this.cartService.addItem({
+    const isSuccess = this.cartService.addItem({
       id: article.id,
       price: article.price,
       src: article.src,
       title: article.name,
     });
+
+    const message = isSuccess
+      ? 'Article ajouté dans le panier avec succès!'
+      : "L'ajout ne peut pas être éffectué. L'article est déjà dans votre panier!";
+    alert(message);
   }
 }
