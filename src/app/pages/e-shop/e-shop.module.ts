@@ -15,6 +15,7 @@ import { ProductImageComponent } from './components/product-image/product-image.
 import { ProductSimilarComponent } from './components/product-similar/product-similar.component';
 import { CartComponent } from './components/cart/cart.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
+import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CartItemComponent } from './components/cart-item/cart-item.component';
     ProductSimilarComponent,
     CartComponent,
     CartItemComponent,
+    OrderSummaryComponent,
   ],
   imports: [CommonModule, EShopRoutingModule, CoreModule, HttpClientModule],
   exports: [EShopComponent],

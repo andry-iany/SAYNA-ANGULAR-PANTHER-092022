@@ -6,6 +6,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { BodyWrapperComponent } from './body-wrapper/body-wrapper.component';
 import { BasketImgComponent } from './basket-img/basket-img.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +15,7 @@ import { BasketImgComponent } from './basket-img/basket-img.component';
     AsideLinksComponent,
     BodyWrapperComponent,
     BasketImgComponent,
+    BreadcrumbComponent,
   ],
   imports: [CommonModule, AppRoutingModule],
   exports: [
@@ -22,6 +24,7 @@ import { BasketImgComponent } from './basket-img/basket-img.component';
     AsideLinksComponent,
     BodyWrapperComponent,
     BasketImgComponent,
+    BreadcrumbComponent,
   ],
 })
 export class CoreModule {}

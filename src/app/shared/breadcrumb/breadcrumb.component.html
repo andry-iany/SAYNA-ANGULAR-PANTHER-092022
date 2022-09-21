@@ -1,0 +1,18 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb text-capitalize">
+    <li
+      class="breadcrumb-item"
+      *ngFor="let link of links; let i = index"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a *ngIf="i !== links.length - 1; else last" [routerLink]="link.href">
+        {{ link.title }}
+      </a>
+
+      <ng-template #last>
+        {{ link.title }}
+      </ng-template>
+    </li>
+  </ol>
+</nav>
