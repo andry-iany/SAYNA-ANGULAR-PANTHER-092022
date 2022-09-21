@@ -7,7 +7,6 @@ import { BasketItem } from '../../e-shop.model';
   styleUrls: ['./cart-item.component.scss'],
 })
 export class CartItemComponent implements OnInit {
-  itemCount = 0;
   @Input() item!: BasketItem;
 
   @Output() onCountChange = new EventEmitter<number>();

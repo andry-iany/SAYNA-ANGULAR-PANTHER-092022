@@ -1,22 +1,37 @@
-<article class="d-flex align-items-center border py-5 px-4 gap-5">
-  <div class="item-img border border-secondary">
-    <img src="../../../assets/illustrations/game/Batgame_14.png" alt="" />
-  </div>
-  <div class="w-100">
-    <p>{{ item.article.title }}</p>
-    <small class="text-secondary">Numéro du produit: X-----</small>
-  </div>
-  <h3 class="text-secondary">{{ item.article.price }}€</h3>
-  <div class="item-count-wrapper">
-    <button (click)="onDecrementCount()">-</button>
-    <span>{{ item.articleCount }}</span>
-    <button (click)="onIncrementCount()">+</button>
+<article
+  class="d-flex align-items-center flex-column flex-lg-row border py-5 px-4 gap-5"
+>
+  <div
+    class="d-flex align-items-center justify-content-between justify-content-lg-start w-100 gap-5"
+  >
+    <div class="item-img border border-secondary">
+      <img
+        [src]="'http://localhost:5678/' + item.article.src"
+        [alt]="item.article.title"
+      />
+    </div>
+
+    <div>
+      <p class="lead">{{ item.article.title }}</p>
+      <small class="text-secondary">
+        Numéro du produit: {{ item.article.id }}
+      </small>
+    </div>
   </div>
 
-  <div
-    class="btn-cancel d-flex align-items-center justify-content-center bg-white text-secondary rounded-circle"
-    (click)="onItemDeleted()"
-  >
-    X
+  <div class="d-flex align-items-center gap-5">
+    <h3 class="text-light m-0">{{ item.article.price }}€</h3>
+    <div class="item-count-wrapper">
+      <button (click)="onDecrementCount()">-</button>
+      <span>{{ item.articleCount }}</span>
+      <button (click)="onIncrementCount()">+</button>
+    </div>
+
+    <div
+      class="btn-cancel d-flex align-items-center justify-content-center bg-white text-secondary rounded-circle"
+      (click)="onItemDeleted()"
+    >
+      X
+    </div>
   </div>
 </article>
