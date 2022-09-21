@@ -36,7 +36,8 @@
   background-color: #160634;
 }
 .cta:disabled {
-  opacity: 0.7;
+  opacity: 0.5;
+  border-color: rgb(151, 151, 151);
   cursor: default;
 }
 

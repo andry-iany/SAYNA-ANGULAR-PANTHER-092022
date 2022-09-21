@@ -37,7 +37,9 @@
       <button
         class="btn-continue"
         routerLink="/e-shop/order"
-        [disabled]="cartItems.length === 0"
+        [disabled]="
+          cartItems.length === 0 || (cartService.getSubtotal() | async) === 0
+        "
       >
         PASSER LA COMMANDE
       </button>
