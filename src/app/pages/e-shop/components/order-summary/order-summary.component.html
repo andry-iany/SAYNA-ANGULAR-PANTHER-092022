@@ -16,7 +16,10 @@
 
           <div>
             <p class="lead m-0">{{ item.article.title }}</p>
-            <h3 class="text-secondary m-0">{{ item.article.price }}€</h3>
+            <h3 class="m-0">{{ item.article.price }}€</h3>
+            <small class="text-secondary">
+              Quantité: {{ item.articleCount }}
+            </small>
           </div>
         </div>
       </ng-container>
@@ -27,18 +30,27 @@
         <input
           type="text"
           class="input-add form-control rounded-0"
-          placeholder="Code promo"
+          placeholder="Promo (essayer SAYNA_PROMO)"
+          #inputAdd
         />
-        <button class="cta">Ajouter</button>
+        <ng-container
+          *ngIf="paymentService.appliedPromo$ | async; else promoNotApplied"
+        >
+          <button class="cta" disabled>Ajouter</button>
+        </ng-container>
+
+        <ng-template #promoNotApplied>
+          <button class="cta" (click)="onAddPromo(inputAdd)">Ajouter</button>
+        </ng-template>
       </div>
 
       <div class="d-flex justify-content-between">
         <p>Sous-total:</p>
-        <p>00.00€</p>
+        <p>{{ cartService.getSubtotal() | async }} €</p>
       </div>
       <div class="d-flex justify-content-between text-secondary">
         <p>Réduction:</p>
-        <p>-</p>
+        <p>{{ paymentService.appliedPromo$ | async }}</p>
       </div>
       <div
         class="d-flex justify-content-between border-secondary border-bottom text-secondary mb-4"
@@ -49,7 +61,7 @@
 
       <div class="lead d-flex justify-content-between">
         <p>Total:</p>
-        <p>00.00€</p>
+        <p>{{ paymentService.getTotalPrice() | async }} €</p>
       </div>
     </section>
 

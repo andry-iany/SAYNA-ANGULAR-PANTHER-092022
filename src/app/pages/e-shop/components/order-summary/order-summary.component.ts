@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../services/cart.service';
+import { PaymentService } from '../../services/payment.service';
 
 @Component({
   selector: 'app-order-summary',
@@ -22,7 +23,20 @@ export class OrderSummaryComponent implements OnInit {
     },
   ];
 
-  constructor(public cartService: CartService) {}
+  constructor(
+    public cartService: CartService,
+    public paymentService: PaymentService
+  ) {}
+
+  onAddPromo(input: HTMLInputElement) {
+    const promoCode = input.value;
+    const isSuccess = this.paymentService.applyPromo(promoCode);
+    const message = isSuccess
+      ? 'Promo ajoutée avec succès!'
+      : 'Promo invalide!';
+    alert(message);
+    input.value = '';
+  }
 
   ngOnInit(): void {}
 }
