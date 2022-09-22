@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 import { UserDetailLong } from '../e-shop.model';
 
 const billingAddress: UserDetailLong['billingAddress'] = [
+  'M. Albert Dupontel',
   '2 Imp. Lebouis',
   '75014 Paris',
   'France',
