@@ -1,7 +1,10 @@
-<div class="d-inline-flex gap-1">
-  <img
-    *ngFor="let imgSrc of ratingImgs"
-    [src]="'/assets/icones/' + imgSrc"
-    alt="Star"
-  />
+<div class="d-inline-flex gap-1 ratings">
+  <ng-container *ngIf="ratingImgs$ | async as ratingImgs">
+    <img
+      *ngFor="let imgSrc of ratingImgs; let i = index"
+      [src]="'/assets/icones/' + imgSrc"
+      alt="Star"
+      (click)="onRatingClicked(i + 1)"
+    />
+  </ng-container>
 </div>

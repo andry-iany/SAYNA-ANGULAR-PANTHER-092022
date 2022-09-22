@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { BehaviorSubject, map, tap } from 'rxjs';
 
 @Component({
   selector: 'app-product-rating',
@@ -7,15 +8,27 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ProductRatingComponent implements OnInit {
   @Input() rating = 0;
-  ratingImgs: Array<string> = [];
+
+  private imgEmpty = 'icone_3.png';
+  private imgFill = 'icone_2.png';
+  private ratingSubject = new BehaviorSubject(0);
+
+  ratingImgs$ = this.ratingSubject.pipe(
+    map((rating) => {
+      const ratingImgs = [];
+      for (let i = 0; i < 5; i++) {
+        ratingImgs.push(i < rating ? this.imgFill : this.imgEmpty);
+      }
+      return ratingImgs;
+    }),
+    tap((val) => console.log(val))
+  );
 
   constructor() {}
 
-  ngOnInit(): void {
-    let imgEmpty = 'icone_3.png';
-    let imgFill = 'icone_2.png';
-    for (let i = 0; i < 5; i++) {
-      this.ratingImgs.push(i < this.rating ? imgFill : imgEmpty);
-    }
+  ngOnInit(): void {}
+
+  onRatingClicked(rating: number) {
+    this.ratingSubject.next(rating);
   }
 }
