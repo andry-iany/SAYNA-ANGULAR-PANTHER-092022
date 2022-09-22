@@ -16,6 +16,7 @@ import { ProductSimilarComponent } from './components/product-similar/product-si
 import { CartComponent } from './components/cart/cart.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
+import { AuthenticationComponent } from './components/authentication/authentication.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { OrderSummaryComponent } from './components/order-summary/order-summary.
     CartComponent,
     CartItemComponent,
     OrderSummaryComponent,
+    AuthenticationComponent,
   ],
   imports: [CommonModule, EShopRoutingModule, CoreModule, HttpClientModule],
   exports: [EShopComponent],

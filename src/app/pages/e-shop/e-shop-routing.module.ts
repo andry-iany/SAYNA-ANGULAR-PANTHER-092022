@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AllProductsComponent } from './components/all-products/all-products.component';
+import { AuthenticationComponent } from './components/authentication/authentication.component';
 import { CartComponent } from './components/cart/cart.component';
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
@@ -27,6 +28,10 @@ const routes: Routes = [
       {
         path: 'order',
         component: OrderSummaryComponent,
+      },
+      {
+        path: 'auth',
+        component: AuthenticationComponent,
       },
     ],
   },

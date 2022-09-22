@@ -27,6 +27,24 @@ textarea {
   }
 }
 
+.cta {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 1px solid #fff;
+  text-transform: uppercase;
+  color: #fff;
+  transition: background-color ease 0.3s;
+  text-transform: uppercase;
+}
+.cta:disabled {
+  cursor: default;
+  opacity: 0.5;
+  border-color: rgb(123, 123, 123);
+}
+.cta:not(:disabled):hover {
+  background-color: #160634;
+}
+
 .with-fade-in {
   opacity: 0;
 }
