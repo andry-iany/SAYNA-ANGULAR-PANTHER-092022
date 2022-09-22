@@ -7,7 +7,8 @@ import { BehaviorSubject, map, tap } from 'rxjs';
   styleUrls: ['./product-rating.component.scss'],
 })
 export class ProductRatingComponent implements OnInit {
-  @Input() rating = 0;
+  @Input('rating') initialRating = 0;
+  @Input() editable = false;
 
   private imgEmpty = 'icone_3.png';
   private imgFill = 'icone_2.png';
@@ -26,9 +27,13 @@ export class ProductRatingComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.ratingSubject.next(this.initialRating);
+  }
 
   onRatingClicked(rating: number) {
-    this.ratingSubject.next(rating);
+    if (this.editable) {
+      this.ratingSubject.next(rating);
+    }
   }
 }

@@ -5,6 +5,7 @@
       [src]="'/assets/icones/' + imgSrc"
       alt="Star"
       (click)="onRatingClicked(i + 1)"
+      [ngClass]="{ editable }"
     />
   </ng-container>
 </div>
