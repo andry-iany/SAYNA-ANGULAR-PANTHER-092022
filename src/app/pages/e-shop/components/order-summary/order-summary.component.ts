@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs';
 import { CartService } from '../../services/cart.service';
 import { PaymentService } from '../../services/payment.service';
 
@@ -22,6 +23,10 @@ export class OrderSummaryComponent implements OnInit {
       href: '/e-shop/order',
     },
   ];
+
+  cartItems$ = this.cartService.cartItems$.pipe(
+    map((items) => items.filter((item) => item.articleCount))
+  );
 
   constructor(
     public cartService: CartService,

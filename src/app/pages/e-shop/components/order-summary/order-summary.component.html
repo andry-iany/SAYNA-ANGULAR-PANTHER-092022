@@ -1,6 +1,6 @@
 <app-breadcrumb [links]="breadcrumbs"></app-breadcrumb>
 
-<ng-container *ngIf="cartService.cartItems$ | async as cartItems">
+<ng-container *ngIf="cartItems$ | async as cartItems">
   <ng-container *ngIf="cartItems.length > 0; else noItems">
     <section class="order">
       <h3 class="mb-5 order-title">Commande</h3>
