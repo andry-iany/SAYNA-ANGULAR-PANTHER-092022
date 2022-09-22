@@ -35,15 +35,13 @@
     <ng-container
       *ngIf="paymentService.getTotalPrice() | async as totalPrice; else noItems"
     >
-      <button class="cta px-5" routerLink="/e-shop/order-confirmation">
+      <button class="cta px-5" (click)="placeOrder()">
         Valider et payer {{ totalPrice }} €
       </button>
     </ng-container>
 
     <ng-template #noItems>
-      <button disabled class="cta px-5" routerLink="/e-shop/order-confirmation">
-        Valider et payer 0 €
-      </button>
+      <button disabled class="cta px-5">Valider et payer 0 €</button>
     </ng-template>
   </section>
 </ng-container>

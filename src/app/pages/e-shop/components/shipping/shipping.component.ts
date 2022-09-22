@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { OrderService } from '../../services/order.service';
 import { PaymentService } from '../../services/payment.service';
 import { UserService } from '../../services/user.service';
 
@@ -34,8 +36,21 @@ export class ShippingComponent implements OnInit {
 
   constructor(
     public userService: UserService,
-    public paymentService: PaymentService
+    public paymentService: PaymentService,
+    public orderService: OrderService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {}
+
+  placeOrder() {
+    const isSuccess = this.orderService.placeOrder();
+
+    if (isSuccess) {
+      alert('Opération éffectuée avec succès!');
+      this.router.navigateByUrl('/e-shop/order-confirmation');
+    } else {
+      alert("Une erreur s'est produite!");
+    }
+  }
 }
