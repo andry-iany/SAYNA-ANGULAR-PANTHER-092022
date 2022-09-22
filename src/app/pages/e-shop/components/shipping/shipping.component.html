@@ -32,8 +32,18 @@
       <p>{{ userDetail.paymentMethod.owner }}</p>
     </article>
 
-    <button class="cta px-5">
-      Valider et payer {{ paymentService.getTotalPrice() | async }} €
-    </button>
+    <ng-container
+      *ngIf="paymentService.getTotalPrice() | async as totalPrice; else noItems"
+    >
+      <button class="cta px-5" routerLink="/e-shop/order-confirmation">
+        Valider et payer {{ totalPrice }} €
+      </button>
+    </ng-container>
+
+    <ng-template #noItems>
+      <button disabled class="cta px-5" routerLink="/e-shop/order-confirmation">
+        Valider et payer 0 €
+      </button>
+    </ng-template>
   </section>
 </ng-container>
