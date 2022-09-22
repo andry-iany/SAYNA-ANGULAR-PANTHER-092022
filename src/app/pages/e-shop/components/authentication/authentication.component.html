@@ -30,26 +30,34 @@
     <div class="tab-pane fade show active" id="connexion-tab-pane" tabindex="0">
       <form>
         <div class="mb-4">
-          <label for="identifiant" class="form-label"> Identifiant </label>
+          <label for="connexion_identifiant" class="form-label">
+            Identifiant
+          </label>
           <input
             type="email"
             class="form-control rounded-0"
-            id="identifiant"
+            id="connexion_identifiant"
             placeholder="Email"
           />
         </div>
 
         <div class="mb-5">
-          <label for="password" class="form-label"> Mot de passe </label>
+          <label for="connexion_password" class="form-label">
+            Mot de passe
+          </label>
           <input
             type="password"
             class="form-control rounded-0"
-            id="password"
+            id="connexion_password"
             placeholder="Mot de passe"
           />
         </div>
 
-        <button class="cta px-5 mb-3 w-100" routerLink="/e-shop">
+        <button
+          class="cta px-5 mb-3 w-100"
+          routerLink="/e-shop/shipping"
+          type="button"
+        >
           valider
         </button>
 
@@ -134,7 +142,11 @@
           </label>
         </div>
 
-        <button class="cta px-5 mb-3 w-100" routerLink="/e-shop">
+        <button
+          class="cta px-5 mb-3 w-100"
+          routerLink="/e-shop/shipping"
+          type="button"
+        >
           valider
         </button>
 
