@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-authentication',
@@ -25,7 +26,11 @@ export class AuthenticationComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {}
+
+  onLoginSuccess() {
+    this.router.navigateByUrl('/e-shop/shipping');
+  }
 }

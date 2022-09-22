@@ -7,6 +7,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
 import { BodyWrapperComponent } from './body-wrapper/body-wrapper.component';
 import { BasketImgComponent } from './basket-img/basket-img.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     BodyWrapperComponent,
     BasketImgComponent,
     BreadcrumbComponent,
+    LoginComponent,
   ],
   imports: [CommonModule, AppRoutingModule],
   exports: [
@@ -25,6 +27,7 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
     BodyWrapperComponent,
     BasketImgComponent,
     BreadcrumbComponent,
+    LoginComponent,
   ],
 })
 export class CoreModule {}
