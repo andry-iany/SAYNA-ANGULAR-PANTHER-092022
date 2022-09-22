@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, map } from 'rxjs';
 import { CartService } from './cart.service';
 
+// temporary promo codes that can be applied to the order
 const PromoToValueMap: { [k: string]: number } = {
   SAYNA_PROMO: 5,
 };
@@ -17,6 +18,7 @@ export class PaymentService {
   constructor(public cartService: CartService) {}
 
   applyPromo(code: string) {
+    // we apply promo only once per order
     if (!this.appliedPromo$.value && this.isValidPromo(code)) {
       const value = PromoToValueMap[code];
       this.appliedPromo$.next(value);
