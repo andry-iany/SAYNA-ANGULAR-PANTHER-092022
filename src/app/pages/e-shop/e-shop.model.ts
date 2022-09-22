@@ -25,13 +25,17 @@ export type TArticle = {
   material?: string;
 };
 
-export const articles: TArticle[] = [
-  {
-    category: 'cat',
-    description: 'some description',
-    id: '2',
-    name: 'the name of the article',
-    price: 23,
-    src: '/article_1.png',
-  },
-];
+type AddressLines = [string, ...string[]];
+
+type PaymentMethod = {
+  type: string;
+  number: string;
+  expiry: string;
+  owner: string;
+};
+
+export type UserDetailLong = {
+  billingAddress: AddressLines;
+  shippingAddress: AddressLines;
+  paymentMethod: PaymentMethod;
+};

@@ -5,6 +5,7 @@ import { AuthenticationComponent } from './components/authentication/authenticat
 import { CartComponent } from './components/cart/cart.component';
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 import { ProductDetailComponent } from './components/product-detail/product-detail.component';
+import { ShippingComponent } from './components/shipping/shipping.component';
 import { EShopComponent } from './e-shop.component';
 
 const routes: Routes = [
@@ -32,6 +33,10 @@ const routes: Routes = [
       {
         path: 'auth',
         component: AuthenticationComponent,
+      },
+      {
+        path: 'shipping',
+        component: ShippingComponent,
       },
     ],
   },

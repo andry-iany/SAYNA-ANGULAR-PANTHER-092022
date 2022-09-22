@@ -17,6 +17,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { CartItemComponent } from './components/cart-item/cart-item.component';
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
+import { ShippingComponent } from './components/shipping/shipping.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { AuthenticationComponent } from './components/authentication/authenticat
     CartItemComponent,
     OrderSummaryComponent,
     AuthenticationComponent,
+    ShippingComponent,
   ],
   imports: [CommonModule, EShopRoutingModule, CoreModule, HttpClientModule],
   exports: [EShopComponent],

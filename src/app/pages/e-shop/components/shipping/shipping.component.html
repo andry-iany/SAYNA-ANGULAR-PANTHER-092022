@@ -1,0 +1,39 @@
+<app-breadcrumb [links]="breadcrumbs"></app-breadcrumb>
+
+<ng-container *ngIf="userDetail$ | async as userDetail">
+  <section class="shipping p-5">
+    <article class="mb-5 pb-3">
+      <h4>Adresse de payment</h4>
+      <p *ngFor="let addressLine of userDetail.billingAddress" class="mb-0">
+        {{ addressLine }}
+      </p>
+    </article>
+
+    <article class="mb-5 pb-3">
+      <h4>Méthode de livraison</h4>
+      <p *ngFor="let addressLine of userDetail.shippingAddress" class="mb-0">
+        {{ addressLine }}
+      </p>
+    </article>
+
+    <article class="mb-5 pb-3">
+      <h4 class="mb-3">Moyen de paiment</h4>
+      <p class="small">
+        <span
+          class="mb-0 text-primary bg-white rounded d-inline-block px-2 py-1 fw-bold"
+        >
+          {{ userDetail.paymentMethod.type }}
+        </span>
+        <span class="ms-2 pe-5 me-5">
+          {{ userDetail.paymentMethod.number }}
+        </span>
+        <span> {{ userDetail.paymentMethod.expiry }} </span>
+      </p>
+      <p>{{ userDetail.paymentMethod.owner }}</p>
+    </article>
+
+    <button class="cta px-5">
+      Valider et payer {{ paymentService.getTotalPrice() | async }} €
+    </button>
+  </section>
+</ng-container>
