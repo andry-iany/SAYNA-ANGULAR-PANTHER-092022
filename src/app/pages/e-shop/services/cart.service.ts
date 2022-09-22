@@ -22,8 +22,12 @@ export class CartService {
   }
 
   deleteItem(id: BasketItem['article']['id']) {
+    return this.deleteItems([id]);
+  }
+
+  deleteItems(ids: BasketItem['article']['id'][]) {
     const deleteItem = (items: BasketItem[]) => {
-      const newItems = items.filter((item) => id !== item.article.id);
+      const newItems = items.filter((item) => !ids.includes(item.article.id));
       return newItems.length === items.length ? null : newItems;
     };
 
