@@ -26,12 +26,14 @@
 
   <div class="tab-content px-4 pt-3 pb-5">
     <div class="tab-pane fade show active" id="connexion-tab-pane" tabindex="0">
-      <form>
+      <form (submit)="onLogin($event)">
         <div class="mb-4">
           <label for="connexion_identifiant" class="form-label">
             Identifiant
           </label>
           <input
+            required
+            name="email"
             type="email"
             class="form-control rounded-0"
             id="connexion_identifiant"
@@ -44,6 +46,8 @@
             Mot de passe
           </label>
           <input
+            required
+            name="password"
             type="password"
             class="form-control rounded-0"
             id="connexion_password"
@@ -51,9 +55,7 @@
           />
         </div>
 
-        <button class="cta px-5 mb-3 w-100" (click)="login()" type="button">
-          valider
-        </button>
+        <button class="cta px-5 mb-3 w-100" type="submit">valider</button>
 
         <div class="d-flex flex-column">
           <a
@@ -67,23 +69,27 @@
     </div>
 
     <div class="tab-pane fade" id="inscription-tab-pane" tabindex="0">
-      <form>
+      <form (submit)="onSignUp($event)">
         <div class="mb-4">
-          <label for="nom" class="form-label"> Nom </label>
+          <label for="lastName" class="form-label"> Nom </label>
           <input
+            required
             type="text"
             class="form-control rounded-0"
-            id="nom"
+            id="lastName"
+            name="lastName"
             placeholder="Nom"
           />
         </div>
 
         <div class="mb-4">
-          <label for="prenoms" class="form-label"> Prénoms </label>
+          <label for="firstName" class="form-label"> Prénoms </label>
           <input
+            required
             type="text"
             class="form-control rounded-0"
-            id="prenoms"
+            id="firstName"
+            id="firstName"
             placeholder="Prénoms"
           />
         </div>
@@ -91,6 +97,8 @@
         <div class="mb-4">
           <label for="identifiant" class="form-label"> Identifiant </label>
           <input
+            required
+            name="email"
             type="email"
             class="form-control rounded-0"
             id="identifiant"
@@ -99,20 +107,10 @@
         </div>
 
         <div class="mb-4">
-          <label for="confirmPassword" class="form-label">
-            Confirmer votre mot de passe
-          </label>
-          <input
-            type="password"
-            class="form-control rounded-0"
-            id="confirmPassword"
-            placeholder="Confirmation du mot de passe"
-          />
-        </div>
-
-        <div class="mb-4">
           <label for="password" class="form-label"> Mot de passe </label>
           <input
+            required
+            name="password"
             type="password"
             class="form-control rounded-0"
             id="password"
@@ -120,8 +118,22 @@
           />
         </div>
 
+        <div class="mb-4">
+          <label for="confirmPassword" class="form-label">
+            Confirmer votre mot de passe
+          </label>
+          <input
+            required
+            name="confirmPassword"
+            type="password"
+            class="form-control rounded-0"
+            id="confirmPassword"
+            placeholder="Confirmation du mot de passe"
+          />
+        </div>
+
         <div class="form-check mb-5 d-flex gap-3">
-          <input type="checkbox" id="t&cs" />
+          <input required type="checkbox" name="checkbox" id="t&cs" />
           <label class="form-check-label" for="t&cs">
             Je reconnais avoir pris connaissance et j'accepte les termes
             <a href="#" class="text-decoration-underline">
@@ -130,9 +142,7 @@
           </label>
         </div>
 
-        <button class="cta px-5 mb-3 w-100" (click)="login()" type="button">
-          valider
-        </button>
+        <button class="cta px-5 mb-3 w-100" type="submit">valider</button>
       </form>
     </div>
   </div>

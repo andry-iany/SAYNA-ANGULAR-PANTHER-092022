@@ -136,7 +136,6 @@
       "capacity": null
     }
   ],
-
   "users": [
     {
       "id": "1",
@@ -144,8 +143,12 @@
       "firstName": "Hubert",
       "email": "hub@gmail.com",
       "phone": "340112120",
-      "shippingAddress": ["Antananarivo"],
-      "billingAddress": ["Antananarivo"]
+      "shippingAddress": [
+        "Antananarivo"
+      ],
+      "billingAddress": [
+        "Antananarivo"
+      ]
     },
     {
       "id": "2",
@@ -153,8 +156,12 @@
       "firstName": "Ginot",
       "email": "ginot@yahoo.fr",
       "phone": "340112121",
-      "shippingAddress": ["Mahajanga"],
-      "billingAddress": ["Tuléar"]
+      "shippingAddress": [
+        "Mahajanga"
+      ],
+      "billingAddress": [
+        "Tuléar"
+      ]
     },
     {
       "id": "3",
@@ -162,8 +169,12 @@
       "firstName": "Alicia",
       "email": "collin@gmail.com",
       "phone": "340112122",
-      "shippingAddress": ["Tuléar"],
-      "billingAddress": ["Tuléar"]
+      "shippingAddress": [
+        "Tuléar"
+      ],
+      "billingAddress": [
+        "Tuléar"
+      ]
     },
     {
       "id": "4",
@@ -171,8 +182,12 @@
       "firstName": "Junior",
       "email": "junior@yahoo.com",
       "phone": "340112123",
-      "shippingAddress": ["Antananarivo"],
-      "billingAddress": ["Antananarivo"]
+      "shippingAddress": [
+        "Antananarivo"
+      ],
+      "billingAddress": [
+        "Antananarivo"
+      ]
     },
     {
       "id": "5",
@@ -180,8 +195,12 @@
       "firstName": "Jean",
       "email": "jean@gmail.com",
       "phone": "340112124",
-      "shippingAddress": ["Antananarivo"],
-      "billingAddress": ["Antananarivo"]
+      "shippingAddress": [
+        "Antananarivo"
+      ],
+      "billingAddress": [
+        "Antananarivo"
+      ]
     },
     {
       "id": "6",
@@ -189,11 +208,56 @@
       "firstName": "Paul",
       "email": "paul@gmail.com",
       "phone": "340112125",
-      "shippingAddress": ["Tuléar"],
-      "billingAddress": ["Mahajanga"]
+      "shippingAddress": [
+        "Tuléar"
+      ],
+      "billingAddress": [
+        "Mahajanga"
+      ]
+    },
+    {
+      "email": "john@doe.com",
+      "firstName": "hi",
+      "lastName": "hello",
+      "id": "QhYb1LD"
+    },
+    {
+      "email": "john@doe.com",
+      "firstName": "hi",
+      "lastName": "hello",
+      "id": "eBYfXWd"
+    },
+    {
+      "email": "john@doe.com",
+      "firstName": "hi",
+      "lastName": "hello",
+      "id": "lY9WCJu"
+    },
+    {
+      "email": "john@doe.com",
+      "firstName": "hi",
+      "lastName": "hello",
+      "id": "Rs__2wJ"
+    },
+    {
+      "email": "some@doe.com",
+      "firstName": "hi",
+      "lastName": "hello",
+      "id": "ZUiw2Fq"
+    },
+    {
+      "email": "some@doe.com",
+      "firstName": "hi",
+      "lastName": "hello",
+      "id": "URgVpgE"
+    },
+    {
+      "email": "john@doe.com",
+      "firstName": "hi",
+      "lastName": "hello",
+      "id": "CRW5F7R"
     }
   ],
-
   "orders": [
     {
       "id": 1,
@@ -211,7 +275,6 @@
       "createdAt": "2022-08-03 00:00:00"
     }
   ],
-
   "reviews": [
     {
       "id": "1",

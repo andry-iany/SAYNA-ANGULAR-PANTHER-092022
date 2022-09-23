@@ -8,6 +8,8 @@ import { BodyWrapperComponent } from './body-wrapper/body-wrapper.component';
 import { BasketImgComponent } from './basket-img/basket-img.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { LoginComponent } from './login/login.component';
+import { API_URL } from './constants';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,7 @@ import { LoginComponent } from './login/login.component';
     BreadcrumbComponent,
     LoginComponent,
   ],
-  imports: [CommonModule, AppRoutingModule],
+  imports: [CommonModule, AppRoutingModule, HttpClientModule],
   exports: [
     NavbarComponent,
     FooterComponent,
@@ -29,5 +31,6 @@ import { LoginComponent } from './login/login.component';
     BreadcrumbComponent,
     LoginComponent,
   ],
+  providers: [{ provide: API_URL, useValue: API_URL }],
 })
 export class CoreModule {}

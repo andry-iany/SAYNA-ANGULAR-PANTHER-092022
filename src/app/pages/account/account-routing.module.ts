@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AccountComponent } from './account.component';
 import { AccountDetailComponent } from './components/account-detail/account-detail.component';
+import { LoginWrapperComponent } from './components/login-wrapper/login-wrapper.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,7 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        component: AccountDetailComponent,
+        component: LoginWrapperComponent,
       },
       {
         path: 'detail',
