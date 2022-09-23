@@ -39,3 +39,13 @@ export type UserDetailLong = {
   shippingAddress: AddressLines;
   paymentMethod: PaymentMethod;
 };
+
+export type Order = {
+  id: number;
+  articles: {
+    id: string;
+    quantity: number;
+  }[];
+  user: number;
+  createdAt: string;
+};

@@ -136,7 +136,6 @@
       "capacity": null
     }
   ],
-
   "users": [
     {
       "id": "1",
@@ -223,7 +222,6 @@
       }
     }
   ],
-
   "orders": [
     {
       "id": 1,
@@ -272,9 +270,19 @@
       "user": "u2WFsvy",
       "createdAt": "Fri, 23 Sep 2022 13:42:55 GMT",
       "id": 4
+    },
+    {
+      "articles": [
+        {
+          "id": "2",
+          "quantity": 1
+        }
+      ],
+      "user": "1",
+      "createdAt": "2022-09-23T19:09:25.279Z",
+      "id": 5
     }
   ],
-
   "reviews": [
     {
       "id": "1",

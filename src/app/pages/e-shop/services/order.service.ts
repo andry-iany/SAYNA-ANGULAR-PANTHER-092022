@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { catchError, map, of, tap } from 'rxjs';
 import { API_URL } from 'src/app/shared/constants';
 import { AuthService } from '../../account/services/auth.service';
+import { Order } from '../e-shop.model';
 import { CartService } from './cart.service';
+import { ProductService } from './product.service';
 
 @Injectable({
   providedIn: 'root',
@@ -13,7 +15,8 @@ export class OrderService {
     private cartService: CartService,
     private authService: AuthService,
     private http: HttpClient,
-    private rootApi: API_URL
+    private rootApi: API_URL,
+    private productService: ProductService
   ) {}
 
   placeOrder() {
@@ -33,6 +36,21 @@ export class OrderService {
         this.cartService.deleteItems(articles.map((art) => art.id));
       }),
       catchError((_) => of(false))
+    );
+  }
+
+  getOrderHistory() {
+    const user = this.authService.getUserLoggedIn() || '';
+    const endpoint = this.rootApi + 'orders/?user=' + encodeURIComponent(user);
+    return this.http.get<Order[]>(endpoint).pipe(
+      map((orders) =>
+        orders.map((order) => {
+          const articleIds = order.articles.map((article) => article.id);
+          const articles$ = this.productService.getArticleByIds(articleIds);
+          return { ...order, articles: articles$ };
+        })
+      ),
+      tap((data) => console.log({ data }))
     );
   }
 }
