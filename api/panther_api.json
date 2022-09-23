@@ -140,7 +140,7 @@
   "users": [
     {
       "id": "1",
-      "name": "ALBAN",
+      "lastName": "ALBAN",
       "firstName": "Hubert",
       "email": "hub@gmail.com",
       "shippingAddress": ["Antananarivo"],
@@ -154,7 +154,7 @@
     },
     {
       "id": "2",
-      "name": "BERTRAND",
+      "lastName": "BERTRAND",
       "firstName": "Ginot",
       "email": "ginot@yahoo.fr",
       "shippingAddress": ["Mahajanga"],
@@ -168,7 +168,7 @@
     },
     {
       "id": "3",
-      "name": "COLLIN",
+      "lastName": "COLLIN",
       "firstName": "Alicia",
       "email": "collin@gmail.com",
       "shippingAddress": ["Tuléar"],
@@ -182,7 +182,7 @@
     },
     {
       "id": "4",
-      "name": "DUPONT",
+      "lastName": "DUPONT",
       "firstName": "Junior",
       "email": "junior@yahoo.com",
       "shippingAddress": ["Antananarivo"],
@@ -196,7 +196,7 @@
     },
     {
       "id": "5",
-      "name": "DUPONT",
+      "lastName": "DUPONT",
       "firstName": "Jean",
       "email": "jean@gmail.com",
       "shippingAddress": ["Antananarivo"],
@@ -210,7 +210,7 @@
     },
     {
       "id": "6",
-      "name": "BERNARD",
+      "lastName": "BERNARD",
       "firstName": "Paul",
       "email": "paul@gmail.com",
       "shippingAddress": ["Tuléar"],

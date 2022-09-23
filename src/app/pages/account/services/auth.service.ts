@@ -62,4 +62,8 @@ export class AuthService {
       catchError(() => of(false))
     );
   }
+
+  logout() {
+    this.userLoggedIn = null;
+  }
 }

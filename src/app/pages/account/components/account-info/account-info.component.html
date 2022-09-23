@@ -1,0 +1,41 @@
+<ng-container *ngIf="userService.userDetail$ | async as userDetail">
+  <div class="border-start px-4 py-3 mb-5">
+    <h2 class="border-bottom border-white pb-3 mb-4 fs-2 fw-bold">
+      Informations personnelles
+    </h2>
+    <p>Nom: {{ userDetail.lastName }}</p>
+    <p>Prénoms: {{ userDetail.firstName }}</p>
+    <p>Email: {{ userDetail.email }}</p>
+
+    <button class="cta mt-5">modifier</button>
+  </div>
+
+  <div class="border-start px-4 py-3">
+    <h2 class="border-bottom border-white pb-3 mb-4 fs-2 fw-bold">
+      Newsletter
+    </h2>
+    <p>
+      Abonnez vous à la newsletter ! Ne ratez pas nos offres exceptionnels sur
+      votre article préféré !
+    </p>
+
+    <form class="px-5 py-4 mb-">
+      <div class="form-check">
+        <input class="form-check-input" name="radio" type="radio" id="yes" />
+        <label class="form-check-label" for="yes"> yes </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          name="radio"
+          type="radio"
+          id="no"
+          checked
+        />
+        <label class="form-check-label" for="no"> no </label>
+      </div>
+    </form>
+
+    <button class="cta mt-5">enregistrer</button>
+  </div>
+</ng-container>
