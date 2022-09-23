@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthService, private router: Router) {
     this.fromUrl =
       (this.router.getCurrentNavigation()?.extras.state?.['from'] as string) ??
-      '';
+      '/account';
   }
 
   ngOnInit(): void {}
