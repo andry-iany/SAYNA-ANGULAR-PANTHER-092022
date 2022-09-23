@@ -28,7 +28,7 @@ export class ShippingComponent implements OnInit {
       href: '/e-shop/shipping',
     },
   ];
-  userDetail$ = this.userService.userDetail$;
+  userDetail$ = this.userService.detail$;
 
   constructor(
     public userService: UserService,
@@ -42,10 +42,9 @@ export class ShippingComponent implements OnInit {
   placeOrder() {
     this.orderService.placeOrder().subscribe((isSuccess) => {
       if (isSuccess) {
-        alert('Opération éffectuée avec succès!');
         this.router.navigateByUrl('/e-shop/order-confirmation');
       } else {
-        alert("Une erreur s'est produite!");
+        alert("Une erreur s'est produite. Veuiller re-essayer ultérieurement");
       }
     });
   }

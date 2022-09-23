@@ -16,17 +16,17 @@ type SignupArg = {
   providedIn: 'root',
 })
 export class AuthService {
+  private endpoint = this.apiUrl + 'users';
+  readonly userLoggedIn$ = new BehaviorSubject<string | null>(null);
+
   constructor(private apiUrl: API_URL, private http: HttpClient) {}
 
-  private endpoint = this.apiUrl + 'users';
-  private userLoggedIn: string | null = null;
-
   getUserLoggedIn() {
-    return this.userLoggedIn;
+    return this.userLoggedIn$.getValue();
   }
 
   isLoggedIn() {
-    return !!this.userLoggedIn;
+    return !!this.userLoggedIn$.getValue();
   }
 
   isLoggedOut() {
@@ -41,7 +41,7 @@ export class AuthService {
     const endpoint = `${this.endpoint}?email=${encodeURIComponent(arg.email)}`;
     return this.http.get<any[]>(endpoint).pipe(
       map((data) => data.length > 0 && data[0].id), // the request always returns an array, but it's an empty one if no account matches
-      tap((userId: string) => (this.userLoggedIn = userId || null)),
+      tap((userId: any) => this.userLoggedIn$.next(userId || null)),
       catchError(() => of(false))
     );
   }
@@ -50,20 +50,25 @@ export class AuthService {
     // we provide default detail in frontend code since we don't have any backend logic to do so
     const newUser: Omit<UserDetail, 'id'> = {
       ...arg,
-      billingAddress: [''],
-      shippingAddress: [''],
-      paymentMethod: { expiry: '', number: '', owner: '', type: '' },
+      billingAddress: ['Antananarivo'],
+      shippingAddress: ['Antananarivo', '102'],
+      paymentMethod: {
+        expiry: '12/24',
+        number: '**** **** **** 1234',
+        owner: 'John Doe',
+        type: 'VISA',
+      },
     };
 
     // we emit "true" to indicate success
     return this.http.post(this.endpoint, newUser).pipe(
-      tap((user: any) => (this.userLoggedIn = user.id)),
+      tap((user: any) => this.userLoggedIn$.next(user.id as string)),
       map(() => true), // no error occured hence the request is deemed successful
       catchError(() => of(false))
     );
   }
 
   logout() {
-    this.userLoggedIn = null;
+    this.userLoggedIn$.next(null);
   }
 }

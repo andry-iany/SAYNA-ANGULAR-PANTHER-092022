@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, of } from 'rxjs';
+import { BehaviorSubject, concatAll, filter, map, mergeAll, of } from 'rxjs';
 import { UserDetail } from 'src/app/app.model';
 import { API_URL } from 'src/app/shared/constants';
 import { AuthService } from '../../account/services/auth.service';
@@ -16,6 +16,15 @@ export class UserService {
     private http: HttpClient,
     private rootApi: API_URL
   ) {}
+
+  readonly detail$ = this.authService.userLoggedIn$.pipe(
+    filter((user) => !!user),
+    map((user) => {
+      const endpoint = this.rootApi + 'users/' + user;
+      return this.http.get<UserDetail>(endpoint);
+    }),
+    concatAll()
+  );
 
   refreshUserDetail() {
     const user = this.authService.getUserLoggedIn();

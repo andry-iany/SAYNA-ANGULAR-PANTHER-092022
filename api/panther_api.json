@@ -244,6 +244,43 @@
         "expiry": "03/26",
         "owner": "ALBERT DUPONTEL"
       }
+    },
+    {
+      "email": "miller@yahoo.fr",
+      "firstName": "miller",
+      "lastName": "johnie",
+      "billingAddress": [
+        ""
+      ],
+      "shippingAddress": [
+        ""
+      ],
+      "paymentMethod": {
+        "expiry": "",
+        "number": "",
+        "owner": "",
+        "type": ""
+      },
+      "id": "3-wiDcQ"
+    },
+    {
+      "email": "sue@eus.com",
+      "firstName": "sue",
+      "lastName": "noha",
+      "billingAddress": [
+        "Antananarivo"
+      ],
+      "shippingAddress": [
+        "Antananarivo",
+        "102"
+      ],
+      "paymentMethod": {
+        "expiry": "12/24",
+        "number": "**** **** **** 1234",
+        "owner": "John Doe",
+        "type": "VISA"
+      },
+      "id": "JtYEAsu"
     }
   ],
   "orders": [
@@ -316,6 +353,47 @@
       "user": "1",
       "createdAt": "2022-09-23T20:45:01.365Z",
       "id": 6
+    },
+    {
+      "articles": [
+        {
+          "id": "2",
+          "quantity": 1
+        }
+      ],
+      "user": "1",
+      "createdAt": "2022-09-23T21:33:10.062Z",
+      "id": 7
+    },
+    {
+      "articles": [
+        {
+          "id": "6",
+          "quantity": 1
+        },
+        {
+          "id": "3",
+          "quantity": 1
+        },
+        {
+          "id": "2",
+          "quantity": 3
+        }
+      ],
+      "user": "1",
+      "createdAt": "2022-09-23T21:33:58.654Z",
+      "id": 8
+    },
+    {
+      "articles": [
+        {
+          "id": "2",
+          "quantity": 1
+        }
+      ],
+      "user": "JtYEAsu",
+      "createdAt": "2022-09-23T21:39:12.980Z",
+      "id": 9
     }
   ],
   "reviews": [
