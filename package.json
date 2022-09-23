@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "start-api": "json-server ./api/panther_api.json --port 5678 --static ./api/articles",
-    "build": "ng build",
+    "ng-start": "ng serve",
+    "ng-build": "ng build",
+    "start": "json-server ./api/panther_api.json --port 5678 --static ./api/articles",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
