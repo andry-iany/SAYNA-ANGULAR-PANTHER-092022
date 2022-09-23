@@ -19,7 +19,9 @@
 
       <p class="text-end py-4 px-3">
         <span class="fw-light text-uppercase me-4">Sous total</span>
-        <span class="h4"> {{ cartService.getSubtotal() | async }}€ </span>
+        <span class="h4">
+          {{ paymentService.getPriceSubtotal() | async }}€
+        </span>
       </p>
     </ng-container>
 
@@ -38,7 +40,8 @@
         class="btn-continue"
         routerLink="/e-shop/order"
         [disabled]="
-          cartItems.length === 0 || (cartService.getSubtotal() | async) === 0
+          cartItems.length === 0 ||
+          (paymentService.getPriceSubtotal() | async) === 0
         "
       >
         PASSER LA COMMANDE

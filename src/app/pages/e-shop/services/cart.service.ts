@@ -52,16 +52,6 @@ export class CartService {
     return this._publishChange(addItem);
   }
 
-  getSubtotal() {
-    return this.cartItems$.pipe(
-      map((items) =>
-        items.reduce((acc, item) => {
-          return acc + item.article.price * item.articleCount;
-        }, 0)
-      )
-    );
-  }
-
   // this function returns true if the operation is successful, false otherwise
   private _publishChange(fn: (items: BasketItem[]) => BasketItem[] | null) {
     // the callback function needs to return null to indicate error

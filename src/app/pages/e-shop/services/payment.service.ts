@@ -32,8 +32,18 @@ export class PaymentService {
   }
 
   getTotalPrice() {
-    return this.cartService
-      .getSubtotal()
-      .pipe(map((subtotal) => subtotal + this.appliedPromo$.value));
+    return this.getPriceSubtotal().pipe(
+      map((subtotal) => subtotal + this.appliedPromo$.value)
+    );
+  }
+
+  getPriceSubtotal() {
+    return this.cartService.cartItems$.pipe(
+      map((items) =>
+        items.reduce((acc, item) => {
+          return acc + item.article.price * item.articleCount;
+        }, 0)
+      )
+    );
   }
 }

@@ -25,7 +25,7 @@ export class OrderService {
     if (!user) return of(false);
 
     const endpoint = this.rootApi + 'orders';
-    const body = { articles, user, createdAt: new Date().toUTCString() };
+    const body = { articles, user, createdAt: new Date().toISOString() };
 
     return this.http.post(endpoint, body).pipe(
       map((arg) => !!arg),
