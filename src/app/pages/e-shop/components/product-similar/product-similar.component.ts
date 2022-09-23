@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { ProductService } from 'src/app/services/product.service';
-import { TArticle } from '../../e-shop.model';
+import { Article } from 'src/app/app.model';
 
 type Maybe<T> = T | null;
 
@@ -11,7 +11,7 @@ type Maybe<T> = T | null;
   styleUrls: ['./product-similar.component.scss'],
 })
 export class ProductSimilarComponent implements OnInit {
-  @Input() article: Maybe<TArticle> = null;
+  @Input() article: Maybe<Article> = null;
 
   constructor(private productService: ProductService) {}
 
@@ -27,7 +27,7 @@ export class ProductSimilarComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  private areArticlesSameCategory(art1: TArticle, art2: Maybe<TArticle>) {
+  private areArticlesSameCategory(art1: Article, art2: Maybe<Article>) {
     return (
       art1.category.trim() === art2?.category.trim() && art1.id !== art2.id
     );

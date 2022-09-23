@@ -420,6 +420,17 @@
       "user": "JtYEAsu",
       "createdAt": "2022-09-23T21:55:11.991Z",
       "id": 11
+    },
+    {
+      "articles": [
+        {
+          "id": "1",
+          "quantity": 1
+        }
+      ],
+      "user": "JtYEAsu",
+      "createdAt": "2022-09-23T22:05:37.255Z",
+      "id": 12
     }
   ],
   "reviews": [

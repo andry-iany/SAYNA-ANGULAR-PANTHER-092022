@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, of, tap } from 'rxjs';
 import { API_URL } from 'src/app/shared/constants';
-import { Order } from '../pages/e-shop/e-shop.model';
+import { Order } from '../app.model';
 import { AuthService } from './auth.service';
 import { CartService } from './cart.service';
 import { ProductService } from './product.service';

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { API_URL } from 'src/app/shared/constants';
-import { BasketItem } from '../../e-shop.model';
+import { BasketItem } from 'src/app/app.model';
 
 @Component({
   selector: 'app-cart-item',

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { API_URL } from 'src/app/shared/constants';
-import { TArticle } from '../../e-shop.model';
+import { Article } from 'src/app/app.model';
 
 @Component({
   selector: 'app-article',
@@ -8,7 +8,7 @@ import { TArticle } from '../../e-shop.model';
   styleUrls: ['./article.component.scss'],
 })
 export class ArticleComponent implements OnInit {
-  @Input() article!: TArticle;
+  @Input() article!: Article;
 
   constructor(public api: API_URL) {}
 

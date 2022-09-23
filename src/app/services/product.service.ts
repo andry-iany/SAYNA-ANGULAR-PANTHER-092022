@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TArticle } from '../pages/e-shop/e-shop.model';
+import { Article } from '../app.model';
 import { filter, map } from 'rxjs';
 import { API_URL } from 'src/app/shared/constants';
 
@@ -30,20 +30,20 @@ export class ProductService {
       endpoint += `?${query}`;
     }
 
-    return this.http.get<TArticle[]>(endpoint);
+    return this.http.get<Article[]>(endpoint);
   }
 
-  getArticleById(id: TArticle['id']) {
+  getArticleById(id: Article['id']) {
     return this.getArticleByIds([id]).pipe(
       map((res) => res[0]),
       filter((res) => !!res)
     );
   }
 
-  getArticleByIds(ids: TArticle['id'][], options?: QueryOptions) {
+  getArticleByIds(ids: Article['id'][], options?: QueryOptions) {
     const queries = [...ids.map((id) => ({ id })), options?.pagination ?? {}];
     const query = this._buildQueryFrom(...queries);
-    return this.http.get<TArticle[]>(`${this.api}?${query}`);
+    return this.http.get<Article[]>(`${this.api}?${query}`);
   }
 
   private _buildQueryFrom(...objects: { [key: string]: string | number }[]) {

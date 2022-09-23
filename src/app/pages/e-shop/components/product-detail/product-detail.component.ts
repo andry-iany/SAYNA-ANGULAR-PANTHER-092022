@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { TArticle } from '../../e-shop.model';
+import { Article } from 'src/app/app.model';
 import { CartService } from '../../../../services/cart.service';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -41,7 +41,7 @@ export class ProductDetailComponent implements OnInit {
     });
   }
 
-  onAddToCart(article: TArticle) {
+  onAddToCart(article: Article) {
     const isSuccess = this.cartService.addItem({
       id: article.id,
       price: article.price,
