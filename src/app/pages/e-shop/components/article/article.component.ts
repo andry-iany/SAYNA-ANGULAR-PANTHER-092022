@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { API_URL } from 'src/app/shared/constants';
 import { TArticle } from '../../e-shop.model';
 
 @Component({
@@ -9,7 +10,7 @@ import { TArticle } from '../../e-shop.model';
 export class ArticleComponent implements OnInit {
   @Input() article!: TArticle;
 
-  constructor() {}
+  constructor(public api: API_URL) {}
 
   ngOnInit(): void {}
 }

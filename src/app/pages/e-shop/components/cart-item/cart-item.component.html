@@ -5,10 +5,7 @@
     class="d-flex align-items-center justify-content-between justify-content-lg-start w-100 gap-5"
   >
     <div class="item-img border border-secondary">
-      <img
-        [src]="'http://localhost:5678/' + item.article.src"
-        [alt]="item.article.title"
-      />
+      <img [src]="api + item.article.src" [alt]="item.article.title" />
     </div>
 
     <div>

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
+import { API_URL } from 'src/app/shared/constants';
 import { CartService } from '../../services/cart.service';
 import { PaymentService } from '../../services/payment.service';
 
@@ -30,7 +31,8 @@ export class OrderSummaryComponent implements OnInit {
 
   constructor(
     public cartService: CartService,
-    public paymentService: PaymentService
+    public paymentService: PaymentService,
+    public api: API_URL
   ) {}
 
   onAddPromo(input: HTMLInputElement) {

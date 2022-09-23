@@ -17,7 +17,7 @@ type SignupArg = {
 export class AuthService {
   constructor(private apiUrl: API_URL, private http: HttpClient) {}
 
-  private endpoint = `${this.apiUrl}/users`;
+  private endpoint = this.apiUrl + 'users';
   private userLoggedIn: string | null = null;
 
   getUserLoggedIn() {

@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { API_URL } from 'src/app/shared/constants';
 import { BasketItem } from '../../e-shop.model';
 
 @Component({
@@ -11,6 +12,8 @@ export class CartItemComponent implements OnInit {
 
   @Output() onCountChange = new EventEmitter<number>();
   @Output() onItemDelete = new EventEmitter<null>();
+
+  constructor(public api: API_URL) {}
 
   ngOnInit(): void {}
 

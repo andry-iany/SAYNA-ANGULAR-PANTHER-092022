@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { API_URL } from 'src/app/shared/constants';
 
 @Component({
   selector: 'app-product-image',
@@ -8,7 +9,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ProductImageComponent implements OnInit {
   @Input() srcSet: string[] = [];
 
-  constructor() {}
+  constructor(public api: API_URL) {}
 
   ngOnInit(): void {}
 }

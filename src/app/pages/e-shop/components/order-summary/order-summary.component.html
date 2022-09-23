@@ -8,10 +8,7 @@
       <ng-container *ngFor="let item of cartItems">
         <div class="d-flex gap-4 align-items-center mb-5">
           <div class="item-img border border-secondary">
-            <img
-              [src]="'http://localhost:5678/' + item.article.src"
-              [alt]="item.article.title"
-            />
+            <img [src]="api + item.article.src" [alt]="item.article.title" />
           </div>
 
           <div>
