@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/pages/account/services/auth.service';
 export class LoginComponent implements OnInit {
   @Output('onLoginSuccess') eventEmitter = new EventEmitter<void>();
 
+  // store the url where we were about to visit before being intercepted by the authentication
   private fromUrl = '';
   constructor(private authService: AuthService, private router: Router) {
     this.fromUrl =
@@ -54,8 +55,11 @@ export class LoginComponent implements OnInit {
       lastName: form['lastName'].value as string,
     };
     this.authService.signup(arg).subscribe((res) => {
-      console.log('signup successful:', res);
-      console.log(this.authService.getUserLoggedIn());
+      if (res) {
+        this.router.navigateByUrl(this.fromUrl);
+      } else {
+        alert("Une erreur s'est produite. Veuillez re-essayer ultérieurement");
+      }
     });
   }
 }
