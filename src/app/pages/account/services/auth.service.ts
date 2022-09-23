@@ -28,6 +28,10 @@ export class AuthService {
     return !!this.userLoggedIn;
   }
 
+  isLoggedOut() {
+    return !this.isLoggedIn();
+  }
+
   login(arg: LoginArg) {
     // the way we allow user to login is just to check whether
     // an account exists with the given email.

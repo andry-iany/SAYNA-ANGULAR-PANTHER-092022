@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { EnigmasComponent } from './pages/enigmas/enigmas.component';
 import { HomeComponent } from './pages/home/home.component';
 import { WakandaComponent } from './pages/wakanda/wakanda.component';
+import { LoginComponent } from './shared/login/login.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,11 @@ const routes: Routes = [
     path: 'enigmas',
     component: EnigmasComponent,
     title: 'Enigmes | Black Panther',
+  },
+  {
+    path: 'authentication',
+    component: LoginComponent,
+    title: 'Authentication | Black Panther',
   },
   {
     path: '',

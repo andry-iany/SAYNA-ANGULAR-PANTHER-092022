@@ -1,25 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from 'src/app/shared/guards/auth.guard';
 import { AccountComponent } from './account.component';
-import { AccountDetailComponent } from './components/account-detail/account-detail.component';
-import { LoginWrapperComponent } from './components/login-wrapper/login-wrapper.component';
 
 const routes: Routes = [
   {
     path: 'account',
     component: AccountComponent,
     title: 'Compte | Black Panther',
-    children: [
-      {
-        path: '',
-        pathMatch: 'full',
-        component: LoginWrapperComponent,
-      },
-      {
-        path: 'detail',
-        component: AccountDetailComponent,
-      },
-    ],
+    canActivate: [AuthGuard],
   },
 ];
 

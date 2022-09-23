@@ -1,149 +1,155 @@
-<section class="auth-tab rounded mt-5">
-  <ul class="nav nav-tabs">
-    <li class="nav-item w-50">
-      <button
-        class="nav-link w-100 fs-4 active"
-        id="connexion-tab"
-        data-bs-toggle="tab"
-        data-bs-target="#connexion-tab-pane"
-        type="button"
+<app-body-wrapper>
+  <section class="auth-tab rounded mt-5">
+    <ul class="nav nav-tabs">
+      <li class="nav-item w-50">
+        <button
+          class="nav-link w-100 fs-4 active"
+          id="connexion-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#connexion-tab-pane"
+          type="button"
+        >
+          Connexion
+        </button>
+      </li>
+      <li class="nav-item w-50">
+        <button
+          class="nav-link w-100 fs-4"
+          id="inscription-tab"
+          data-bs-toggle="tab"
+          data-bs-target="#inscription-tab-pane"
+          type="button"
+        >
+          Inscription
+        </button>
+      </li>
+    </ul>
+
+    <div class="tab-content px-4 pt-3 pb-5">
+      <div
+        class="tab-pane fade show active"
+        id="connexion-tab-pane"
+        tabindex="0"
       >
-        Connexion
-      </button>
-    </li>
-    <li class="nav-item w-50">
-      <button
-        class="nav-link w-100 fs-4"
-        id="inscription-tab"
-        data-bs-toggle="tab"
-        data-bs-target="#inscription-tab-pane"
-        type="button"
-      >
-        Inscription
-      </button>
-    </li>
-  </ul>
+        <form (submit)="onLogin($event)">
+          <div class="mb-4">
+            <label for="connexion_identifiant" class="form-label">
+              Identifiant
+            </label>
+            <input
+              required
+              name="email"
+              type="email"
+              class="form-control rounded-0"
+              id="connexion_identifiant"
+              placeholder="Email"
+            />
+          </div>
 
-  <div class="tab-content px-4 pt-3 pb-5">
-    <div class="tab-pane fade show active" id="connexion-tab-pane" tabindex="0">
-      <form (submit)="onLogin($event)">
-        <div class="mb-4">
-          <label for="connexion_identifiant" class="form-label">
-            Identifiant
-          </label>
-          <input
-            required
-            name="email"
-            type="email"
-            class="form-control rounded-0"
-            id="connexion_identifiant"
-            placeholder="Email"
-          />
-        </div>
+          <div class="mb-5">
+            <label for="connexion_password" class="form-label">
+              Mot de passe
+            </label>
+            <input
+              required
+              name="password"
+              type="password"
+              class="form-control rounded-0"
+              id="connexion_password"
+              placeholder="Mot de passe"
+            />
+          </div>
 
-        <div class="mb-5">
-          <label for="connexion_password" class="form-label">
-            Mot de passe
-          </label>
-          <input
-            required
-            name="password"
-            type="password"
-            class="form-control rounded-0"
-            id="connexion_password"
-            placeholder="Mot de passe"
-          />
-        </div>
+          <button class="cta px-5 mb-3 w-100" type="submit">valider</button>
 
-        <button class="cta px-5 mb-3 w-100" type="submit">valider</button>
-
-        <div class="d-flex flex-column">
-          <a
-            routerLink="#"
-            class="text-decoration-underline text-secondary mx-auto"
-          >
-            Mot de passe oublié
-          </a>
-        </div>
-      </form>
-    </div>
-
-    <div class="tab-pane fade" id="inscription-tab-pane" tabindex="0">
-      <form (submit)="onSignUp($event)">
-        <div class="mb-4">
-          <label for="lastName" class="form-label"> Nom </label>
-          <input
-            required
-            type="text"
-            class="form-control rounded-0"
-            id="lastName"
-            name="lastName"
-            placeholder="Nom"
-          />
-        </div>
-
-        <div class="mb-4">
-          <label for="firstName" class="form-label"> Prénoms </label>
-          <input
-            required
-            type="text"
-            class="form-control rounded-0"
-            id="firstName"
-            id="firstName"
-            placeholder="Prénoms"
-          />
-        </div>
-
-        <div class="mb-4">
-          <label for="identifiant" class="form-label"> Identifiant </label>
-          <input
-            required
-            name="email"
-            type="email"
-            class="form-control rounded-0"
-            id="identifiant"
-            placeholder="Email"
-          />
-        </div>
-
-        <div class="mb-4">
-          <label for="password" class="form-label"> Mot de passe </label>
-          <input
-            required
-            name="password"
-            type="password"
-            class="form-control rounded-0"
-            id="password"
-            placeholder="Mot de passe"
-          />
-        </div>
-
-        <div class="mb-4">
-          <label for="confirmPassword" class="form-label">
-            Confirmer votre mot de passe
-          </label>
-          <input
-            required
-            name="confirmPassword"
-            type="password"
-            class="form-control rounded-0"
-            id="confirmPassword"
-            placeholder="Confirmation du mot de passe"
-          />
-        </div>
-
-        <div class="form-check mb-5 d-flex gap-3">
-          <input required type="checkbox" name="checkbox" id="t&cs" />
-          <label class="form-check-label" for="t&cs">
-            Je reconnais avoir pris connaissance et j'accepte les termes
-            <a href="#" class="text-decoration-underline">
-              des conditions générales d'utilisation.
+          <div class="d-flex flex-column">
+            <a
+              routerLink="#"
+              class="text-decoration-underline text-secondary mx-auto"
+            >
+              Mot de passe oublié
             </a>
-          </label>
-        </div>
+          </div>
+        </form>
+      </div>
 
-        <button class="cta px-5 mb-3 w-100" type="submit">valider</button>
-      </form>
+      <div class="tab-pane fade" id="inscription-tab-pane" tabindex="0">
+        <form (submit)="onSignUp($event)">
+          <div class="mb-4">
+            <label for="lastName" class="form-label"> Nom </label>
+            <input
+              required
+              type="text"
+              class="form-control rounded-0"
+              id="lastName"
+              name="lastName"
+              placeholder="Nom"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="firstName" class="form-label"> Prénoms </label>
+            <input
+              required
+              type="text"
+              class="form-control rounded-0"
+              id="firstName"
+              id="firstName"
+              placeholder="Prénoms"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="identifiant" class="form-label"> Identifiant </label>
+            <input
+              required
+              name="email"
+              type="email"
+              class="form-control rounded-0"
+              id="identifiant"
+              placeholder="Email"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="password" class="form-label"> Mot de passe </label>
+            <input
+              required
+              name="password"
+              type="password"
+              class="form-control rounded-0"
+              id="password"
+              placeholder="Mot de passe"
+            />
+          </div>
+
+          <div class="mb-4">
+            <label for="confirmPassword" class="form-label">
+              Confirmer votre mot de passe
+            </label>
+            <input
+              required
+              name="confirmPassword"
+              type="password"
+              class="form-control rounded-0"
+              id="confirmPassword"
+              placeholder="Confirmation du mot de passe"
+            />
+          </div>
+
+          <div class="form-check mb-5 d-flex gap-3">
+            <input required type="checkbox" name="checkbox" id="t&cs" />
+            <label class="form-check-label" for="t&cs">
+              Je reconnais avoir pris connaissance et j'accepte les termes
+              <a href="#" class="text-decoration-underline">
+                des conditions générales d'utilisation.
+              </a>
+            </label>
+          </div>
+
+          <button class="cta px-5 mb-3 w-100" type="submit">valider</button>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</app-body-wrapper>

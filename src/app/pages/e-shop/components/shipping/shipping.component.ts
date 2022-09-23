@@ -24,10 +24,6 @@ export class ShippingComponent implements OnInit {
       href: '/e-shop/order',
     },
     {
-      title: 'authentification',
-      href: '/e-shop/auth',
-    },
-    {
       title: 'livraison et payment',
       href: '/e-shop/shipping',
     },
