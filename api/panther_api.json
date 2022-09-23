@@ -136,262 +136,152 @@
       "capacity": null
     }
   ],
-  "avis": [
+
+  "users": [
     {
       "id": "1",
-      "contenu": "Mon cadeau préféré",
-      "idUsers": "1",
-      "idArticles": "13"
+      "name": "ALBAN",
+      "firstName": "Hubert",
+      "email": "hub@gmail.com",
+      "phone": "340112120",
+      "shippingAddress": ["Antananarivo"],
+      "billingAddress": ["Antananarivo"]
     },
     {
       "id": "2",
-      "contenu": "Excellent",
-      "idUsers": "2",
-      "idArticles": "12"
+      "name": "BERTRAND",
+      "firstName": "Ginot",
+      "email": "ginot@yahoo.fr",
+      "phone": "340112121",
+      "shippingAddress": ["Mahajanga"],
+      "billingAddress": ["Tuléar"]
     },
     {
       "id": "3",
-      "contenu": "Trop bien",
-      "idUsers": "3",
-      "idArticles": "10"
+      "name": "COLLIN",
+      "firstName": "Alicia",
+      "email": "collin@gmail.com",
+      "phone": "340112122",
+      "shippingAddress": ["Tuléar"],
+      "billingAddress": ["Tuléar"]
     },
     {
       "id": "4",
-      "contenu": "J'adore",
-      "idUsers": "4",
-      "idArticles": "11"
+      "name": "DUPONT",
+      "firstName": "Junior",
+      "email": "junior@yahoo.com",
+      "phone": "340112123",
+      "shippingAddress": ["Antananarivo"],
+      "billingAddress": ["Antananarivo"]
     },
     {
       "id": "5",
-      "contenu": "Je recommande",
-      "idUsers": "5",
-      "idArticles": "8"
+      "name": "DUPONT",
+      "firstName": "Jean",
+      "email": "jean@gmail.com",
+      "phone": "340112124",
+      "shippingAddress": ["Antananarivo"],
+      "billingAddress": ["Antananarivo"]
     },
     {
       "id": "6",
-      "contenu": "Bonne qualité",
-      "idUsers": "6",
-      "idArticles": "9"
+      "name": "BERNARD",
+      "firstName": "Paul",
+      "email": "paul@gmail.com",
+      "phone": "340112125",
+      "shippingAddress": ["Tuléar"],
+      "billingAddress": ["Mahajanga"]
+    }
+  ],
+
+  "orders": [
+    {
+      "id": 1,
+      "articles": [
+        {
+          "id": 1,
+          "quantity": 3
+        },
+        {
+          "id": 2,
+          "quantity": 1
+        }
+      ],
+      "user": 3,
+      "createdAt": "2022-08-03 00:00:00"
+    }
+  ],
+
+  "reviews": [
+    {
+      "id": "1",
+      "content": "Mon cadeau préféré",
+      "user": "1",
+      "article": "13",
+      "rating": 3
+    },
+    {
+      "id": "2",
+      "content": "Excellent",
+      "user": "2",
+      "article": "12",
+      "rating": 3
+    },
+    {
+      "id": "3",
+      "content": "Trop bien",
+      "user": "3",
+      "article": "10",
+      "rating": 3
+    },
+    {
+      "id": "4",
+      "content": "J'adore",
+      "user": "4",
+      "article": "11",
+      "rating": 3
+    },
+    {
+      "id": "5",
+      "content": "Je recommande",
+      "user": "5",
+      "article": "8",
+      "rating": 3
+    },
+    {
+      "id": "6",
+      "content": "Bonne qualité",
+      "user": "6",
+      "article": "9",
+      "rating": 3
     },
     {
       "id": "7",
-      "contenu": "J'ai adoré",
-      "idUsers": "1",
-      "idArticles": "5"
+      "content": "J'ai adoré",
+      "user": "1",
+      "article": "5",
+      "rating": 3
     },
     {
       "id": "8",
-      "contenu": "Mon préféré",
-      "idUsers": "2",
-      "idArticles": "4"
+      "content": "Mon préféré",
+      "user": "2",
+      "article": "4",
+      "rating": 3
     },
     {
       "id": "9",
-      "contenu": "Mon article favoris",
-      "idUsers": "3",
-      "idArticles": "6"
+      "content": "Mon article favoris",
+      "user": "3",
+      "article": "6",
+      "rating": 3
     },
     {
       "id": "10",
-      "contenu": "Satisfait ",
-      "idUsers": "4",
-      "idArticles": "3"
-    }
-  ],
-  "clients": [
-    {
-      "id": "1",
-      "Nom": "ALBAN",
-      "Prenom": "Hubert",
-      "Email": "hub@gmail.com",
-      "NumPhone": "340112120",
-      "AdresseLivraison": "Antananarivo",
-      "AdresseFacturation": "Antananarivo"
-    },
-    {
-      "id": "2",
-      "Nom": "BERTRAND",
-      "Prenom": "Ginot",
-      "Email": "ginot@yahoo.fr",
-      "NumPhone": "340112121",
-      "AdresseLivraison": "Mahajanga",
-      "AdresseFacturation": "Tuléar"
-    },
-    {
-      "id": "3",
-      "Nom": "COLLIN",
-      "Prenom": "Alicia",
-      "Email": "collin@gmail.com",
-      "NumPhone": "340112122",
-      "AdresseLivraison": "Tuléar",
-      "AdresseFacturation": "Tuléar"
-    },
-    {
-      "id": "4",
-      "Nom": "DUPONT",
-      "Prenom": "Junior",
-      "Email": "junior@yahoo.com",
-      "NumPhone": "340112123",
-      "AdresseLivraison": "Antananarivo",
-      "AdresseFacturation": "Antananarivo"
-    },
-    {
-      "id": "5",
-      "Nom": "DUPONT",
-      "Prenom": "Jean",
-      "Email": "jean@gmail.com",
-      "NumPhone": "340112124",
-      "AdresseLivraison": "Antananarivo",
-      "AdresseFacturation": "Antananarivo"
-    },
-    {
-      "id": "6",
-      "Nom": "BERNARD",
-      "Prenom": "Paul",
-      "Email": "paul@gmail.com",
-      "NumPhone": "340112125",
-      "AdresseLivraison": "Tuléar",
-      "AdresseFacturation": "Mahajanga"
-    }
-  ],
-  "livraison": [
-    {
-      "id": "1",
-      "Type": "Livraison à domicile.",
-      "Delai_min": "2",
-      "Delai_max": "4"
-    },
-    {
-      "id": "2",
-      "Type": "Retrait en point relais.",
-      "Delai_min": "1",
-      "Delai_max": "2"
-    }
-  ],
-  "notes": [
-    { "id": "1", "notes": "5", "id_Users": "1", "id_Articles": "13" },
-    { "id": "2", "notes": "4", "id_Users": "2", "id_Articles": "12" },
-    { "id": "3", "notes": "3", "id_Users": "3", "id_Articles": "10" },
-    { "id": "4", "notes": "5", "id_Users": "4", "id_Articles": "11" },
-    { "id": "5", "notes": "4", "id_Users": "5", "id_Articles": "8" },
-    { "id": "6", "notes": "4", "id_Users": "6", "id_Articles": "9" },
-    { "id": "7", "notes": "5", "id_Users": "1", "id_Articles": "5" },
-    { "id": "8", "notes": "4", "id_Users": "2", "id_Articles": "4" },
-    { "id": "9", "notes": "3", "id_Users": "3", "id_Articles": "6" },
-    { "id": "10", "notes": "5", "id_Users": "4", "id_Articles": "3" }
-  ],
-  "vente": [
-    {
-      "id": "1",
-      "id_Article": "1",
-      "id_Users": "5",
-      "Date_Achat": "2022-08-03 00:00:00",
-      "quantite": "1",
-      "id_livraison": "1"
-    },
-    {
-      "id": "2",
-      "id_Article": "8",
-      "id_Users": "1",
-      "Date_Achat": "2019-05-12 00:00:00",
-      "quantite": "2",
-      "id_livraison": "2"
-    },
-    {
-      "id": "3",
-      "id_Article": "11",
-      "id_Users": "2",
-      "Date_Achat": "2019-05-11 00:00:00",
-      "quantite": "1",
-      "id_livraison": "1"
-    },
-    {
-      "id": "4",
-      "id_Article": "2",
-      "id_Users": "3",
-      "Date_Achat": "2022-08-10 00:00:00",
-      "quantite": "1",
-      "id_livraison": "2"
-    },
-    {
-      "id": "5",
-      "id_Article": "5",
-      "id_Users": "5",
-      "Date_Achat": "2022-08-04 00:00:00",
-      "quantite": "1",
-      "id_livraison": "1"
-    },
-    {
-      "id": "6",
-      "id_Article": "3",
-      "id_Users": "4",
-      "Date_Achat": "2022-03-05 00:00:00",
-      "quantite": "1",
-      "id_livraison": "2"
-    },
-    {
-      "id": "7",
-      "id_Article": "5",
-      "id_Users": "6",
-      "Date_Achat": "2022-01-14 00:00:00",
-      "quantite": "1",
-      "id_livraison": "1"
-    },
-    {
-      "id": "8",
-      "id_Article": "13",
-      "id_Users": "4",
-      "Date_Achat": "2020-06-14 00:00:00",
-      "quantite": "2",
-      "id_livraison": "2"
-    },
-    {
-      "id": "9",
-      "id_Article": "9",
-      "id_Users": "1",
-      "Date_Achat": "2019-03-07 00:00:00",
-      "quantite": "1",
-      "id_livraison": "1"
-    },
-    {
-      "id": "10",
-      "id_Article": "4",
-      "id_Users": "2",
-      "Date_Achat": "2022-05-06 00:00:00",
-      "quantite": "1",
-      "id_livraison": "2"
-    },
-    {
-      "id": "11",
-      "id_Article": "6",
-      "id_Users": "3",
-      "Date_Achat": "2022-05-06 00:00:00",
-      "quantite": "1",
-      "id_livraison": "1"
-    },
-    {
-      "id": "12",
-      "id_Article": "7",
-      "id_Users": "4",
-      "Date_Achat": "2022-08-03 00:00:00",
-      "quantite": "1",
-      "id_livraison": "2"
-    },
-    {
-      "id": "13",
-      "id_Article": "10",
-      "id_Users": "5",
-      "Date_Achat": "2022-08-03 00:00:00",
-      "quantite": "1",
-      "id_livraison": "1"
-    },
-    {
-      "id": "14",
-      "id_Article": "12",
-      "id_Users": "4",
-      "Date_Achat": "2022-08-03 00:00:00",
-      "quantite": "1",
-      "id_livraison": "2"
+      "content": "Satisfait ",
+      "user": "4",
+      "article": "3",
+      "rating": 3
     }
   ]
 }
