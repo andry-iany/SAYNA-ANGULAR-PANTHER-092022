@@ -291,6 +291,39 @@
       ],
       "user": 3,
       "createdAt": "2022-08-03 00:00:00"
+    },
+    {
+      "articles": [
+        {
+          "id": "1",
+          "quantity": 1
+        }
+      ],
+      "user": "u2WFsvy",
+      "createdAt": "Fri, 23 Sep 2022 13:32:38 GMT",
+      "id": 2
+    },
+    {
+      "articles": [
+        {
+          "id": "2",
+          "quantity": 1
+        }
+      ],
+      "user": "u2WFsvy",
+      "createdAt": "Fri, 23 Sep 2022 13:41:44 GMT",
+      "id": 3
+    },
+    {
+      "articles": [
+        {
+          "id": "2",
+          "quantity": 1
+        }
+      ],
+      "user": "u2WFsvy",
+      "createdAt": "Fri, 23 Sep 2022 13:42:55 GMT",
+      "id": 4
     }
   ],
   "reviews": [

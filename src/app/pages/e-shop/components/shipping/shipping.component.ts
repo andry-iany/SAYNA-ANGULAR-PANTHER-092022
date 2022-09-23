@@ -40,13 +40,13 @@ export class ShippingComponent implements OnInit {
   ngOnInit(): void {}
 
   placeOrder() {
-    const isSuccess = this.orderService.placeOrder();
-
-    if (isSuccess) {
-      alert('Opération éffectuée avec succès!');
-      this.router.navigateByUrl('/e-shop/order-confirmation');
-    } else {
-      alert("Une erreur s'est produite!");
-    }
+    this.orderService.placeOrder().subscribe((isSuccess) => {
+      if (isSuccess) {
+        alert('Opération éffectuée avec succès!');
+        this.router.navigateByUrl('/e-shop/order-confirmation');
+      } else {
+        alert("Une erreur s'est produite!");
+      }
+    });
   }
 }
