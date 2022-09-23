@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderService } from 'src/app/pages/e-shop/services/order.service';
+import { OrderService } from 'src/app/services/order.service';
 import { API_URL } from 'src/app/shared/constants';
 
 @Component({

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { OrderService } from '../../services/order.service';
-import { PaymentService } from '../../services/payment.service';
-import { UserService } from '../../services/user.service';
+import { OrderService } from 'src/app/services/order.service';
+import { PaymentService } from 'src/app/services/payment.service';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-shipping',

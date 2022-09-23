@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TArticle } from '../e-shop.model';
+import { TArticle } from '../pages/e-shop/e-shop.model';
 import { filter, map } from 'rxjs';
 import { API_URL } from 'src/app/shared/constants';
 

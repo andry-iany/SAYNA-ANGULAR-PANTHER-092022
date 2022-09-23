@@ -8,7 +8,7 @@ import {
   RouterStateSnapshot,
 } from '@angular/router';
 import { filter, take } from 'rxjs';
-import { AuthService } from 'src/app/pages/account/services/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Injectable({
   providedIn: 'root',

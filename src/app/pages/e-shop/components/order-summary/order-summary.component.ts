@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { API_URL } from 'src/app/shared/constants';
-import { CartService } from '../../services/cart.service';
-import { PaymentService } from '../../services/payment.service';
+import { CartService } from '../../../../services/cart.service';
+import { PaymentService } from 'src/app/services/payment.service';
 
 @Component({
   selector: 'app-order-summary',

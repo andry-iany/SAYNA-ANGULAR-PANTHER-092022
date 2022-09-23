@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { BehaviorSubject, map } from 'rxjs';
-import { BasketItem } from '../e-shop.model';
+import { BasketItem } from '../pages/e-shop/e-shop.model';
 
 @Injectable({
   providedIn: 'root',

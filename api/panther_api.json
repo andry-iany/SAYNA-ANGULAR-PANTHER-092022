@@ -394,6 +394,32 @@
       "user": "JtYEAsu",
       "createdAt": "2022-09-23T21:39:12.980Z",
       "id": 9
+    },
+    {
+      "articles": [
+        {
+          "id": "2",
+          "quantity": 1
+        }
+      ],
+      "user": "JtYEAsu",
+      "createdAt": "2022-09-23T21:54:07.841Z",
+      "id": 10
+    },
+    {
+      "articles": [
+        {
+          "id": "2",
+          "quantity": 1
+        },
+        {
+          "id": "1",
+          "quantity": 1
+        }
+      ],
+      "user": "JtYEAsu",
+      "createdAt": "2022-09-23T21:55:11.991Z",
+      "id": 11
     }
   ],
   "reviews": [

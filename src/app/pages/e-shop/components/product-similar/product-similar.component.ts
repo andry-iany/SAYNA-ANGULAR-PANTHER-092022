@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { map } from 'rxjs';
+import { ProductService } from 'src/app/services/product.service';
 import { TArticle } from '../../e-shop.model';
-import { ProductService } from '../../services/product.service';
 
 type Maybe<T> = T | null;
 

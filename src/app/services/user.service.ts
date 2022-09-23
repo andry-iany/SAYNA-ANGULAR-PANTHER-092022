@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, concatAll, filter, map, mergeAll, of } from 'rxjs';
 import { UserDetail } from 'src/app/app.model';
 import { API_URL } from 'src/app/shared/constants';
-import { AuthService } from '../../account/services/auth.service';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
