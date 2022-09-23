@@ -8,15 +8,18 @@ const routes: Routes = [
   {
     path: 'wakanda',
     component: WakandaComponent,
+    title: 'Wakanda | Black Panther',
   },
   {
     path: 'enigmas',
     component: EnigmasComponent,
+    title: 'Enigmes | Black Panther',
   },
   {
     path: '',
     component: HomeComponent,
     pathMatch: 'full',
+    title: 'Home | Black Panther',
   },
 ];
 

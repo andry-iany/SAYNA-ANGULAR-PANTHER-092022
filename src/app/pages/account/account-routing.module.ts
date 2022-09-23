@@ -7,6 +7,7 @@ const routes: Routes = [
   {
     path: 'account',
     component: AccountComponent,
+    title: 'Compte | Black Panther',
     children: [
       {
         path: '',

@@ -13,6 +13,7 @@ const routes: Routes = [
   {
     path: 'e-shop',
     component: EShopComponent,
+    title: 'E-Shop | Black Panther',
     children: [
       {
         path: '',
