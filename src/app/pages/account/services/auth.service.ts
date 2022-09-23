@@ -37,7 +37,6 @@ export class AuthService {
     // an account exists with the given email.
     // If so, the login is successful.
 
-    // we emit "true" to indicate success
     const endpoint = `${this.endpoint}?email=${encodeURIComponent(arg.email)}`;
     return this.http.get<any[]>(endpoint).pipe(
       map((data) => data.length > 0 && data[0].id), // the request always returns an array, but it's an empty one if no account matches

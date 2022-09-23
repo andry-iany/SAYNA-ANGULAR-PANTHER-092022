@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/pages/account/services/auth.service';
 
 @Component({
@@ -9,7 +10,12 @@ import { AuthService } from 'src/app/pages/account/services/auth.service';
 export class LoginComponent implements OnInit {
   @Output('onLoginSuccess') eventEmitter = new EventEmitter<void>();
 
-  constructor(private authService: AuthService) {}
+  private fromUrl = '';
+  constructor(private authService: AuthService, private router: Router) {
+    this.fromUrl =
+      (this.router.getCurrentNavigation()?.extras.state?.['from'] as string) ??
+      '';
+  }
 
   ngOnInit(): void {}
 
@@ -20,9 +26,13 @@ export class LoginComponent implements OnInit {
       email: form['email'].value as string,
       password: form['password'].value as string,
     };
+
     this.authService.login(arg).subscribe((res) => {
-      console.log('login successful:', res);
-      console.log(this.authService.getUserLoggedIn());
+      if (res) {
+        this.router.navigateByUrl(this.fromUrl);
+      } else {
+        alert('Email ou mot de passe incorrect. Veuillez re-essayer');
+      }
     });
   }
 
