@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, of, tap } from 'rxjs';
+import { BehaviorSubject, catchError, map, of, tap } from 'rxjs';
 import { UserDetail } from 'src/app/app.model';
 import { API_URL } from 'src/app/shared/constants';
 

@@ -1,9 +1,11 @@
-<h2 class="mb-5 summary-title">Historique des commandes</h2>
+<h2 class="border-bottom border-white pb-3 mb-4 fs-2 fw-bold">
+  Historique des commandes
+</h2>
 
 <ng-container *ngIf="orders$ | async as orders">
   <ul>
     <li class="mb-4" *ngFor="let order of orders">
-      <h5 class="fw-bold mb-1">Commande no: {{ order.id }}</h5>
+      <h5 class="fw-bold">Commande no: {{ order.id }}</h5>
       <ng-container *ngIf="order.articles | async as articles">
         <span *ngFor="let article of articles">{{ article.name }}, </span>
       </ng-container>
