@@ -136,146 +136,94 @@
       "capacity": null
     }
   ],
+
   "users": [
     {
       "id": "1",
       "name": "ALBAN",
       "firstName": "Hubert",
       "email": "hub@gmail.com",
-      "phone": "340112120",
-      "shippingAddress": [
-        "Antananarivo"
-      ],
-      "billingAddress": [
-        "Antananarivo"
-      ]
+      "shippingAddress": ["Antananarivo"],
+      "billingAddress": ["Antananarivo"],
+      "paymentMethod": {
+        "type": "VISA",
+        "number": "**** **** **** 0000",
+        "expiry": "03/26",
+        "owner": "ALBERT DUPONTEL"
+      }
     },
     {
       "id": "2",
       "name": "BERTRAND",
       "firstName": "Ginot",
       "email": "ginot@yahoo.fr",
-      "phone": "340112121",
-      "shippingAddress": [
-        "Mahajanga"
-      ],
-      "billingAddress": [
-        "Tuléar"
-      ]
+      "shippingAddress": ["Mahajanga"],
+      "billingAddress": ["Tuléar"],
+      "paymentMethod": {
+        "type": "VISA",
+        "number": "**** **** **** 0000",
+        "expiry": "03/26",
+        "owner": "ALBERT DUPONTEL"
+      }
     },
     {
       "id": "3",
       "name": "COLLIN",
       "firstName": "Alicia",
       "email": "collin@gmail.com",
-      "phone": "340112122",
-      "shippingAddress": [
-        "Tuléar"
-      ],
-      "billingAddress": [
-        "Tuléar"
-      ]
+      "shippingAddress": ["Tuléar"],
+      "billingAddress": ["Tuléar"],
+      "paymentMethod": {
+        "type": "VISA",
+        "number": "**** **** **** 0000",
+        "expiry": "03/26",
+        "owner": "ALBERT DUPONTEL"
+      }
     },
     {
       "id": "4",
       "name": "DUPONT",
       "firstName": "Junior",
       "email": "junior@yahoo.com",
-      "phone": "340112123",
-      "shippingAddress": [
-        "Antananarivo"
-      ],
-      "billingAddress": [
-        "Antananarivo"
-      ]
+      "shippingAddress": ["Antananarivo"],
+      "billingAddress": ["Antananarivo"],
+      "paymentMethod": {
+        "type": "VISA",
+        "number": "**** **** **** 0000",
+        "expiry": "03/26",
+        "owner": "ALBERT DUPONTEL"
+      }
     },
     {
       "id": "5",
       "name": "DUPONT",
       "firstName": "Jean",
       "email": "jean@gmail.com",
-      "phone": "340112124",
-      "shippingAddress": [
-        "Antananarivo"
-      ],
-      "billingAddress": [
-        "Antananarivo"
-      ]
+      "shippingAddress": ["Antananarivo"],
+      "billingAddress": ["Antananarivo"],
+      "paymentMethod": {
+        "type": "VISA",
+        "number": "**** **** **** 0000",
+        "expiry": "03/26",
+        "owner": "ALBERT DUPONTEL"
+      }
     },
     {
       "id": "6",
       "name": "BERNARD",
       "firstName": "Paul",
       "email": "paul@gmail.com",
-      "phone": "340112125",
-      "shippingAddress": [
-        "Tuléar"
-      ],
-      "billingAddress": [
-        "Mahajanga"
-      ]
-    },
-    {
-      "email": "john@doe.com",
-      "firstName": "hi",
-      "lastName": "hello",
-      "id": "QhYb1LD"
-    },
-    {
-      "email": "john@doe.com",
-      "firstName": "hi",
-      "lastName": "hello",
-      "id": "eBYfXWd"
-    },
-    {
-      "email": "john@doe.com",
-      "firstName": "hi",
-      "lastName": "hello",
-      "id": "lY9WCJu"
-    },
-    {
-      "email": "john@doe.com",
-      "firstName": "hi",
-      "lastName": "hello",
-      "id": "Rs__2wJ"
-    },
-    {
-      "email": "some@doe.com",
-      "firstName": "hi",
-      "lastName": "hello",
-      "id": "ZUiw2Fq"
-    },
-    {
-      "email": "some@doe.com",
-      "firstName": "hi",
-      "lastName": "hello",
-      "id": "URgVpgE"
-    },
-    {
-      "email": "john@doe.com",
-      "firstName": "hi",
-      "lastName": "hello",
-      "id": "CRW5F7R"
-    },
-    {
-      "email": "john@doe.com",
-      "firstName": "hi",
-      "lastName": "hello",
-      "id": "HDRS2Bh"
-    },
-    {
-      "email": "john@doe.co",
-      "firstName": "hi",
-      "lastName": "hello",
-      "id": "u2WFsvy"
-    },
-    {
-      "email": "hi@doe.co",
-      "firstName": "hi",
-      "lastName": "hello",
-      "id": "WLaxaxX"
+      "shippingAddress": ["Tuléar"],
+      "billingAddress": ["Mahajanga"],
+      "paymentMethod": {
+        "type": "VISA",
+        "number": "**** **** **** 0000",
+        "expiry": "03/26",
+        "owner": "ALBERT DUPONTEL"
+      }
     }
   ],
+
   "orders": [
     {
       "id": 1,
@@ -326,6 +274,7 @@
       "id": 4
     }
   ],
+
   "reviews": [
     {
       "id": "1",

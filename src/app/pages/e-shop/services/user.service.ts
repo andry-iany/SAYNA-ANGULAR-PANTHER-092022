@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 import { UserDetailLong } from '../e-shop.model';
 
 const billingAddress: UserDetailLong['billingAddress'] = [
