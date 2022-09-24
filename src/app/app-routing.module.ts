@@ -28,11 +28,6 @@ const routes: Routes = [
     pathMatch: 'full',
     title: 'Home | Black Panther',
   },
-  {
-    path: '**',
-    component: NotFoundComponent,
-    title: '404 | Black Panther',
-  },
 ];
 
 @NgModule({
