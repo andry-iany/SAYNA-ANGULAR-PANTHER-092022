@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { EnigmasComponent } from './pages/enigmas/enigmas.component';
 import { HomeComponent } from './pages/home/home.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { WakandaComponent } from './pages/wakanda/wakanda.component';
 import { LoginComponent } from './shared/login/login.component';
 
@@ -26,6 +27,11 @@ const routes: Routes = [
     component: HomeComponent,
     pathMatch: 'full',
     title: 'Home | Black Panther',
+  },
+  {
+    path: '**',
+    component: NotFoundComponent,
+    title: '404 | Black Panther',
   },
 ];
 

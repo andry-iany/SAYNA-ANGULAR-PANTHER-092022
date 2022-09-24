@@ -9,6 +9,7 @@ import { EnigmasComponent } from './pages/enigmas/enigmas.component';
 import { EShopModule } from './pages/e-shop/e-shop.module';
 import { CoreModule } from './shared/core.module';
 import { AccountModule } from './pages/account/account.module';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AccountModule } from './pages/account/account.module';
     HomeComponent,
     WakandaComponent,
     EnigmasComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
