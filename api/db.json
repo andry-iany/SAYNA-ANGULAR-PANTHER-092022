@@ -142,12 +142,8 @@
       "lastName": "ALBAN",
       "firstName": "Hubert",
       "email": "hub@gmail.com",
-      "shippingAddress": [
-        "Antananarivo"
-      ],
-      "billingAddress": [
-        "Antananarivo"
-      ],
+      "shippingAddress": ["Antananarivo"],
+      "billingAddress": ["Antananarivo"],
       "paymentMethod": {
         "type": "VISA",
         "number": "**** **** **** 0000",
@@ -160,12 +156,8 @@
       "lastName": "BERTRAND",
       "firstName": "Ginot",
       "email": "ginot@yahoo.fr",
-      "shippingAddress": [
-        "Mahajanga"
-      ],
-      "billingAddress": [
-        "Tuléar"
-      ],
+      "shippingAddress": ["Mahajanga"],
+      "billingAddress": ["Tuléar"],
       "paymentMethod": {
         "type": "VISA",
         "number": "**** **** **** 0000",
@@ -178,12 +170,8 @@
       "lastName": "COLLIN",
       "firstName": "Alicia",
       "email": "collin@gmail.com",
-      "shippingAddress": [
-        "Tuléar"
-      ],
-      "billingAddress": [
-        "Tuléar"
-      ],
+      "shippingAddress": ["Tuléar"],
+      "billingAddress": ["Tuléar"],
       "paymentMethod": {
         "type": "VISA",
         "number": "**** **** **** 0000",
@@ -196,12 +184,8 @@
       "lastName": "DUPONT",
       "firstName": "Junior",
       "email": "junior@yahoo.com",
-      "shippingAddress": [
-        "Antananarivo"
-      ],
-      "billingAddress": [
-        "Antananarivo"
-      ],
+      "shippingAddress": ["Antananarivo"],
+      "billingAddress": ["Antananarivo"],
       "paymentMethod": {
         "type": "VISA",
         "number": "**** **** **** 0000",
@@ -214,12 +198,8 @@
       "lastName": "DUPONT",
       "firstName": "Jean",
       "email": "jean@gmail.com",
-      "shippingAddress": [
-        "Antananarivo"
-      ],
-      "billingAddress": [
-        "Antananarivo"
-      ],
+      "shippingAddress": ["Antananarivo"],
+      "billingAddress": ["Antananarivo"],
       "paymentMethod": {
         "type": "VISA",
         "number": "**** **** **** 0000",
@@ -232,12 +212,8 @@
       "lastName": "BERNARD",
       "firstName": "Paul",
       "email": "paul@gmail.com",
-      "shippingAddress": [
-        "Tuléar"
-      ],
-      "billingAddress": [
-        "Mahajanga"
-      ],
+      "shippingAddress": ["Tuléar"],
+      "billingAddress": ["Mahajanga"],
       "paymentMethod": {
         "type": "VISA",
         "number": "**** **** **** 0000",
@@ -249,12 +225,8 @@
       "email": "miller@yahoo.fr",
       "firstName": "miller",
       "lastName": "johnie",
-      "billingAddress": [
-        ""
-      ],
-      "shippingAddress": [
-        ""
-      ],
+      "billingAddress": [""],
+      "shippingAddress": [""],
       "paymentMethod": {
         "expiry": "",
         "number": "",
@@ -267,13 +239,8 @@
       "email": "sue@eus.com",
       "firstName": "sue",
       "lastName": "noha",
-      "billingAddress": [
-        "Antananarivo"
-      ],
-      "shippingAddress": [
-        "Antananarivo",
-        "102"
-      ],
+      "billingAddress": ["Antananarivo"],
+      "shippingAddress": ["Antananarivo", "102"],
       "paymentMethod": {
         "expiry": "12/24",
         "number": "**** **** **** 1234",
